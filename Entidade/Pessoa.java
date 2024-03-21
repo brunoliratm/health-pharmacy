@@ -4,6 +4,7 @@ public class Pessoa {
     private String cVUnica;
     private String telefone;
     private String email;
+    private String senha;
     
     public String getNome() {
         return nome;
@@ -29,11 +30,18 @@ public class Pessoa {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Pessoa(String nome, String cVUnica, String telefone, String email) {
+    public String getSenha(){
+        return senha;
+    }
+    public void setSenha(String senha){
+        this.senha=senha;
+    }
+    public Pessoa(String nome, String cVUnica, String telefone, String email, String senha) {
         this.nome = nome;
         this.cVUnica = cVUnica;
         this.telefone = telefone;
         this.email = email;
+        this.senha = senha;
     }
 
     
