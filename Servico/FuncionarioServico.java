@@ -1,16 +1,16 @@
 package Servico;
 
 import java.util.Scanner;
-import TratamentoDeErroELimpeza.CadastroSenha;
+
 import Entidade.Funcionario;
 import Repositorio.FuncionarioRepositorio;
 
 public class FuncionarioServico {
     CadastroSenha cadastroSenha = new CadastroSenha();
-    FuncionarioRepositorio listaFuncionario = new FuncionarioRepositorio();
-    public void cadastro() throws InterruptedException{
+    
+    public void cadastroFuncionario() throws InterruptedException{
         Scanner sc = new Scanner(System.in);
-        System.out.println("Criando novo funcionario:");
+        System.out.println("Cadastrando novo funcionario:");
         System.out.println("");
         Thread.sleep(1000);
         System.out.print("Nome: ");
@@ -25,13 +25,10 @@ public class FuncionarioServico {
         String CargoFuncionario = sc.nextLine();
         System.out.print("\nSalário: ");
         Float SalarioFuncionario = sc.nextFloat();
-        System.out.print("\nSenha: ");
-        String SenhaFuncionario = sc.nextLine();
         
-        cadastroSenha.cadastroSenha(SenhaFuncionario);
-        
+        String SenhaFuncionario=cadastroSenha.cadastroSenha();
         Funcionario Funcionario1 = new Funcionario(nome,emailFuncionario, telefoneFuncionario, CargoFuncionario, SalarioFuncionario, SenhaFuncionario , cnpjFuncionario);
-        listaFuncionario.addFuncionario(Funcionario1);
+        FuncionarioRepositorio.addFuncionario(Funcionario1);
         System.out.println("Funcionario cadastrado");
         sc.close();
     }
