@@ -1,6 +1,8 @@
 package TratamentoDeErroELimpeza;
-/*/
-public void limpeza(){
+import java.io.IOException;
+
+public class Limpeza{
+    public void limpeza(){
         String os = System.getProperty("os.name").toLowerCase();
 
         try {
@@ -14,4 +16,5 @@ public void limpeza(){
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-    }*/
+    }
+}
