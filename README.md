@@ -33,7 +33,7 @@ git clone https://github.com/brunoliratm/health-pharmacy.git
 
 ## :world_map:Diagram
 <details>
-  <summary>entity Structure</summary>
+  <summary>Entity Structure</summary>
   
   ![Project1](images/estrutura.png)
 </details>
