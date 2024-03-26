@@ -44,6 +44,13 @@ git clone https://github.com/brunoliratm/health-pharmacy.git
 </details>
 </br>
 
+## :zombie:Credits
+
+| <a href="https://github.com/brunoliratm"><img src="https://avatars.githubusercontent.com/u/114788642?v=4" float="left" width="40px" height=40px><p>BrunoMagno</p></a> | <a href="https://github.com/P4UL0Jr"><img src="https://avatars.githubusercontent.com/u/127964717?v=4" float="left" width="40px" height="40px"><p>P4ULOjr</p></a> |
+| --- | --- |
+
+</br>
+
 ## :handshake:Contributing
 
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
