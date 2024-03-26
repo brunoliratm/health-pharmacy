@@ -30,6 +30,20 @@ git clone https://github.com/brunoliratm/health-pharmacy.git
 
 </br>
 
+
+## :world_map:Diagram
+<details>
+  <summary>entity Structure</summary>
+  
+  ![Project1](images/estrutura.png)
+</details>
+<details>
+  <summary>APP Diagram</summary>
+  
+  ![Project2](images/diagrama.png)
+</details>
+</br>
+
 ## :handshake:Contributing
 
 Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
