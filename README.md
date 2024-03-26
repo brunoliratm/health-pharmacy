@@ -17,6 +17,11 @@ Welcome to the Health-pharmacy project! This project aims to provide a comprehen
 
 </br>
 
+## :fire:Code 
+<p><a href="health-pharmacy/src">(Click here to view the code)</a></p>
+
+</br>
+
 ## :open_file_folder:Installation
 
 ```shell
@@ -35,8 +40,3 @@ Contributions are welcome! If you have any ideas, suggestions, or bug reports, p
 
 This project is licensed under the [MIT License](LICENSE).
 
-</br>
-
-## :email:Contact
-
-For any inquiries or support, please contact us at [bmagnoserver@gmail.com](mailto:bmagnoserver@gmail.com).
