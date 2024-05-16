@@ -1,9 +1,10 @@
-package Servico;
+package GUI;
 
 import java.util.Scanner;
+import Servico.CadastroCliente;
 import Tratamento.*;
 
-public class MenuInicial {
+public class MenuEntrada {
     static Scanner sc = new Scanner(System.in);
 
     //Menu Inicial
@@ -102,7 +103,7 @@ public class MenuInicial {
 
             switch (escolha) {
                 case 1:
-                    System.out.println("op 1");
+                    CadastroCliente.cadastroCliente();
                     break;
                 case 2:
                     System.out.println("op 2");
@@ -131,5 +132,3 @@ public class MenuInicial {
         }
         
     }
-
-

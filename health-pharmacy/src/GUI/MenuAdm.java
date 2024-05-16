@@ -1,4 +1,4 @@
-package Servico;
+package GUI;
 
 public class MenuAdm {
     public static void menuADM() throws InterruptedException{
