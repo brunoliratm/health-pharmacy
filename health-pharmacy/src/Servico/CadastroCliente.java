@@ -50,7 +50,7 @@ public class CadastroCliente {
                     System.out.println("Conta cadastrada com sucesso!");
                     Thread.sleep(2000);
                     sc.close();
-                    MenuCliente.menuCliente();
+                    MenuCliente.menuCliente(cliente1);
                 }
             }
         } catch (Exception e) {

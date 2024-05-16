@@ -44,7 +44,7 @@ public class CadastroFuncionario {
                     System.out.println("Conta cadastrada com sucesso!");
                     Thread.sleep(2000);
                     sc.close();
-                    MenuFuncionario.menuFuncionario();
+                    MenuFuncionario.menuFuncionario(Funcionario1);
                 }
             }
 

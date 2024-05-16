@@ -24,4 +24,13 @@ public class Funcionario extends Pessoa{
     public void setCNPJ(String CNPJ) {
         this.CNPJ = CNPJ;
     }
+
+
+    @Override
+    public String toString() {
+        return "Cargo: " + getCargo() + "\nNome: " + getNome() + "\nCNPJ: " + getCNPJ()
+                + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nSenha: " + getSenha();
+    }
+
+    
 }
