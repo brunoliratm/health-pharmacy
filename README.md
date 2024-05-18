@@ -46,6 +46,12 @@ git clone https://github.com/brunoliratm/health-pharmacy.git
   
   ![Project2](images/diagrama.png)
 </details>
+<details>
+  <summary>Class Diagram</summary>
+
+
+  ![Project3](images/diagramaDeClasse.png)
+</details>
 </br>
 
 ## :zombie:Credits
