@@ -2,6 +2,7 @@ package Servico;
 
 import java.util.Scanner;
 import Entidade.Funcionario;
+import GUI.MenuEntrada;
 import GUI.MenuFuncionario;
 import Repositorio.RepositorioFuncionario;
 import Tratamento.tratamento;
@@ -13,8 +14,6 @@ public class LoginFuncionario {
         System.out.println("Login do Funcionario\n");
 
         try {
-            boolean loginSuccess = false;
-            do {
                 System.out.println("Digite seu CNPJ: ");
                 String cnpj = sc.nextLine();
                 System.out.println("Digite sua senha: ");
@@ -24,20 +23,17 @@ public class LoginFuncionario {
                     if (funcionario.getCNPJ().equals(cnpj) && funcionario.getSenha().equals(senha)) {
                         System.out.println("Login efetuado com sucesso!");
                         Thread.sleep(2000);
-                        loginSuccess = true;
+                        Funcionario funcionario1 = funcionario;
+                        MenuFuncionario.menuFuncionario(funcionario1);
                         break;
+                    }else {
+                        tratamento.contaInvalida(); 
+                        MenuEntrada.menuLogin();
                     }
-                }
-                if (loginSuccess) {
-                    MenuFuncionario.menuFuncionario();
-                } else {
-                    tratamento.contaInvalida();
-                   
-                }
-            } while (!loginSuccess);
+                } 
         } catch (Exception e) {
             tratamento.valorInvalido();
- 
+            MenuEntrada.menuLogin();
         }
     }
 

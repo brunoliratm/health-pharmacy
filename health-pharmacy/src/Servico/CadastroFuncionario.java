@@ -47,10 +47,10 @@ public class CadastroFuncionario {
                     MenuFuncionario.menuFuncionario(Funcionario1);
                 }
             }
-
         } catch (Exception e) {
             tratamento.valorInvalido();
             cadastroFuncionario();
+
         }
     }
 }

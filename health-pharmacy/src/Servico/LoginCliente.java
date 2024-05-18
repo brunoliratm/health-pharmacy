@@ -3,6 +3,7 @@ package Servico;
 import java.util.Scanner;
 import Entidade.Cliente;
 import GUI.MenuCliente;
+import GUI.MenuEntrada;
 import Repositorio.RepositorioCliente;
 import Tratamento.tratamento;
 
@@ -13,8 +14,6 @@ public class LoginCliente {
         System.out.println("Login de Cliente\n");
 
         try {
-            boolean loginSuccess = false;
-            do {
                 System.out.println("Digite seu CPF: ");
                 String cpf = sc.nextLine();
                 System.out.println("Digite sua senha: ");
@@ -24,19 +23,18 @@ public class LoginCliente {
                     if (cliente.getCPF().equals(cpf) && cliente.getSenha().equals(senha)) {
                         System.out.println("Login efetuado com sucesso!");
                         Thread.sleep(2000);
-                        loginSuccess = true;
+                        Cliente cliente1 = cliente;
+                        MenuCliente.menuCliente(cliente1);
                         break;
+                    } else {
+                        tratamento.contaInvalida();    
+                        MenuEntrada.menuLogin();
+                        break;   
                     }
-                }
-                if (loginSuccess) {
-                  MenuCliente.menuCliente();
-                } else {
-                    tratamento.contaInvalida();       
-                }
-            } while (!loginSuccess);
+                }    
         } catch (Exception e) {
             tratamento.valorInvalido();
- 
+            MenuEntrada.menuLogin();
         }
     }
 }

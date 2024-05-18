@@ -55,7 +55,7 @@ public class CadastroCliente {
             }
         } catch (Exception e) {
             tratamento.valorInvalido();
-            cadastroCliente();
+            MenuEntrada.menuLogin();
         }
     }
 }
