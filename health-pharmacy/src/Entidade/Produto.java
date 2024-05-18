@@ -59,4 +59,10 @@ public class Produto {
     public void setTarja(String tarja) {
         this.tarja = tarja;
     }
+
+    @Override
+    public String toString() {
+        return "Informacoes do Produto: \nID: " + getId() + "\nNome: " + getNome() + "\nPreco: " + getPreco() + "Quantidade: " + getQuantidade() + "Marca: " + getMarca() + "\nTarja: " + getTarja();
+    }
+
 }

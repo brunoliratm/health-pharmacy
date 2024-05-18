@@ -10,6 +10,7 @@ public class MenuFuncionario {
   static Scanner sc = new Scanner(System.in);
   public static void menuFuncionario(Funcionario funcionario1) throws InterruptedException{
     System.out.println("Menu do Funcionário\n\n");
+    Thread.sleep(1500);
     System.out.println("[1] Gereneciar produtos");
     System.out.println("[2] Informações do funcionários");
     System.out.println("[3] Retornar ao menu de login");

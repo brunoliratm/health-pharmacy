@@ -9,7 +9,7 @@ import Tratamento.*;
 
 public class CadastroFuncionario {
 
-    public void cadastroFuncionario() throws InterruptedException {
+    public static void cadastroFuncionario() throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Cadastrando novo funcionario:\n");
         Thread.sleep(1000);

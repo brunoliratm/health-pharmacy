@@ -2,6 +2,9 @@ package GUI;
 
 import java.util.Scanner;
 import Servico.CadastroCliente;
+import Servico.CadastroFuncionario;
+import Servico.LoginCliente;
+import Servico.LoginFuncionario;
 import Tratamento.*;
 
 public class MenuEntrada {
@@ -65,10 +68,10 @@ public class MenuEntrada {
 
             switch (escolha) {
                 case 1:
-                    System.out.println("op 1");
+                    LoginCliente.loginCliente();
                     break;
                 case 2:
-                    System.out.println("op 2");
+                    LoginFuncionario.loginFuncionario();
                     break;
                 case 3:
                     menu();
@@ -106,7 +109,7 @@ public class MenuEntrada {
                     CadastroCliente.cadastroCliente();
                     break;
                 case 2:
-                    System.out.println("op 2");
+                    CadastroFuncionario.cadastroFuncionario();
                     break;
                 case 3:
                     menu();

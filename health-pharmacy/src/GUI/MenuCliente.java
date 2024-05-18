@@ -9,6 +9,7 @@ public class MenuCliente {
   static Scanner sc = new Scanner(System.in);
   public static void menuCliente(Cliente cliente1) throws InterruptedException{
     System.out.println("Menu do Cliente\n\n");
+    Thread.sleep(1500);
     System.out.println("[1] Comprar produto");
     System.out.println("[2] Vizualizar produtos disponíveis");
     System.out.println("[3] Historico de Compras");

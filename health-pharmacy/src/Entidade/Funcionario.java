@@ -28,8 +28,7 @@ public class Funcionario extends Pessoa{
 
     @Override
     public String toString() {
-        return "Cargo: " + getCargo() + "\nNome: " + getNome() + "\nCNPJ: " + getCNPJ()
-                + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nSenha: " + getSenha();
+        return "Informacoes do Funcionario: \nCargo: " + getCargo() + "\nNome: " + getNome() + "\nCNPJ: " + getCNPJ() + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nSenha: " + getSenha();
     }
 
     
