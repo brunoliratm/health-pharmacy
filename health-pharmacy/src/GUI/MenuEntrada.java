@@ -1,6 +1,8 @@
 package GUI;
 
 import java.util.Scanner;
+
+import Administracao.MenuAdm;
 import Servico.CadastroCliente;
 import Servico.CadastroFuncionario;
 import Servico.LoginCliente;

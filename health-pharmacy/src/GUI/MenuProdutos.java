@@ -3,6 +3,7 @@ package GUI;
 import java.util.Scanner;
 
 import Entidade.Funcionario;
+import Servico.AtualizarProduto;
 import Servico.CadastroProduto;
 import Servico.RemoverProduto;
 import Servico.VizualizarProduto;
@@ -33,7 +34,7 @@ public class MenuProdutos {
         RemoverProduto.removerProduto(funcionario1);
         break;
       case "3":
-        // Atualizar produto
+        AtualizarProduto.atualizarProduto(funcionario1);
         break;
       case "4":
         VizualizarProduto.vizualizarProduto(funcionario1);

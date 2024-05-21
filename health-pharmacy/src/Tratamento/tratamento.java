@@ -20,8 +20,8 @@ public class tratamento {
         System.out.println("Digite um CPF válido!");
         Thread.sleep(2000);
     }
-    public static void cnpjInvalido() throws InterruptedException{
-        System.out.println("Digite um CNPJ válido");
+    public static void CPFInvalido() throws InterruptedException{
+        System.out.println("Digite um CPF válido");
         Thread.sleep(2000);
     }
 

@@ -14,13 +14,13 @@ public class LoginFuncionario {
         System.out.println("Login do Funcionario\n");
 
         try {
-                System.out.println("Digite seu CNPJ: ");
-                String cnpj = sc.nextLine();
+                System.out.println("Digite seu CPF: ");
+                String CPF = sc.nextLine();
                 System.out.println("Digite sua senha: ");
                 String senha = sc.nextLine();
 
                 for (Funcionario funcionario : RepositorioFuncionario.listaFuncionario) {
-                    if (funcionario.getCNPJ().equals(cnpj) && funcionario.getSenha().equals(senha)) {
+                    if (funcionario.getCPF().equals(CPF) && funcionario.getSenha().equals(senha)) {
                         System.out.println("Login efetuado com sucesso!");
                         Thread.sleep(2000);
                         Funcionario funcionario1 = funcionario;

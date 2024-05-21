@@ -2,12 +2,12 @@ package Entidade;
 
 public class Funcionario extends Pessoa{
     private String cargo;
-    private String CNPJ;
+    private String CPF;
 
-    public Funcionario(String nome,String email,String telefone,String cargo, String senha, String CNPJ){
+    public Funcionario(String nome,String email,String telefone,String cargo, String senha, String CPF){
         super(nome, telefone, email, senha);
         this.cargo = cargo;
-        this.CNPJ = CNPJ;
+        this.CPF = CPF;
     }
 
 
@@ -18,17 +18,17 @@ public class Funcionario extends Pessoa{
         this.cargo = cargo;
     }
 
-    public String getCNPJ() {
-        return CNPJ;
+    public String getCPF() {
+        return CPF;
     }
-    public void setCNPJ(String CNPJ) {
-        this.CNPJ = CNPJ;
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
     }
 
 
     @Override
     public String toString() {
-        return "Informacoes do Funcionario: \nCargo: " + getCargo() + "\nNome: " + getNome() + "\nCNPJ: " + getCNPJ() + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nSenha: " + getSenha();
+        return "Informacoes do Funcionario: \nCargo: " + getCargo() + "\nNome: " + getNome() + "\nCPF: " + getCPF() + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nSenha: " + getSenha();
     }
 
     

@@ -15,11 +15,11 @@ public class CadastroFuncionario {
         Thread.sleep(1000);
 
         try {
-            System.out.print("Cnpj(apenas os digitos, sem pontuacao): ");
-            String cnpjFuncionario = sc.nextLine();
-            cnpjFuncionario = cnpjFuncionario.replaceAll("[^0-9]", "");
-            if (cnpjFuncionario.length() != 14) {
-                tratamento.cnpjInvalido();
+            System.out.print("CPF(apenas os digitos, sem pontuacao): ");
+            String CPFFuncionario = sc.nextLine();
+            CPFFuncionario = CPFFuncionario.replaceAll("[^0-9]", "");
+            if (CPFFuncionario.length() != 14) {
+                tratamento.CPFInvalido();
                 cadastroFuncionario();
             }
             System.out.print("Nome: ");
@@ -34,11 +34,11 @@ public class CadastroFuncionario {
             String CargoFuncionario = sc.nextLine();
 
             for (Funcionario funcionario : RepositorioFuncionario.listaFuncionario) {
-                if (funcionario.getCNPJ().equals(cnpjFuncionario) || funcionario.getEmail().equals(emailFuncionario)) {
+                if (funcionario.getCPF().equals(CPFFuncionario) || funcionario.getEmail().equals(emailFuncionario)) {
                     tratamento.contaJaExiste();
                     MenuEntrada.menuRegistro();
                 } else {
-                    Funcionario Funcionario1 = new Funcionario(nome, emailFuncionario, telefoneFuncionario, CargoFuncionario, SenhaFuncionario, cnpjFuncionario);
+                    Funcionario Funcionario1 = new Funcionario(nome, emailFuncionario, telefoneFuncionario, CargoFuncionario, SenhaFuncionario, CPFFuncionario);
                     RepositorioFuncionario.addFuncionario(Funcionario1);
                     Thread.sleep(1000);
                     System.out.println("Conta cadastrada com sucesso!");

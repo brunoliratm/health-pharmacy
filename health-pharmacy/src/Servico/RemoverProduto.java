@@ -10,7 +10,8 @@ public class RemoverProduto {
   public static void removerProduto(Funcionario funcionario1) throws InterruptedException {
     Scanner sc = new Scanner(System.in);
     System.out.println("Remoção de produto\n");
-    System.out.print("Digite o ID do produto que deseja remover: ");
+    System.out.println("Digite o ID do produto que deseja remover: \n");
+    System.out.print("--> ");
     String id = sc.nextLine();
 
     for (int i = 0; i < RepositorioProduto.listaProduto.size(); i++) {
