@@ -2,14 +2,16 @@ package Servico;
 
 import java.util.Scanner;
 
+import Entidade.Funcionario;
 import Entidade.Produto;
+import GUI.MenuProdutos;
 import Repositorio.RepositorioProduto;
 import Tratamento.tratamento;
 
 public class CadastroProduto {
-    Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
-    public void cadastroProduto() throws InterruptedException {
+    public static void cadastroProduto(Funcionario funcionario1) throws InterruptedException {
         System.out.println("Cadastrar novo Produto: \n");
         Thread.sleep(1000);
 
@@ -29,14 +31,16 @@ public class CadastroProduto {
             Produto produtoo = new Produto(id, nome, preco, quantidade, marca, tarja);
             RepositorioProduto.addProduto(produtoo);
             System.out.println("Produto cadastrado");
+            Thread.sleep(2000);
             sc.close();
+            MenuProdutos.menuProdutos(funcionario1);
         } catch (Exception e) {
             tratamento.valorInvalido();
-            cadastroProduto();
+            cadastroProduto(funcionario1);
         }
     }
 
-    public String tarja() throws InterruptedException {
+    public static String tarja() throws InterruptedException {
         String tarja = null;
         System.out.println("Qual a tarja do medicamento");
         System.out.println("[1]-Sem tarja\n [2]-tarja amarela\n [3]-tarja vermelha\n [4]tarja preta");
@@ -46,15 +50,20 @@ public class CadastroProduto {
         switch (escolha) {
             case "1":
                 tarja = "Sem tarja";
+                break;
             case "2":
                 tarja = "Tarja amarela";
+                break;
             case "3":
                 tarja = "Tarja vermelha";
+                break;
             case "4":
                 tarja = "Tarja preta";
+                break;
             default:
                 System.out.println("Digite uma opção válida!");
                 tarja();
+
         }
 
         return tarja;

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import Entidade.Produto;
 
 public class RepositorioProduto {
-    static ArrayList<Produto>  listaProdutos = new ArrayList<>();
+    public static ArrayList<Produto>  listaProduto = new ArrayList<>();
     public static void addProduto(Produto produto){
-        listaProdutos.add(produto);
+        listaProduto.add(produto);
     }
 }

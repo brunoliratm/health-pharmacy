@@ -62,7 +62,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Informacoes do Produto: \nID: " + getId() + "\nNome: " + getNome() + "\nPreco: " + getPreco() + "Quantidade: " + getQuantidade() + "Marca: " + getMarca() + "\nTarja: " + getTarja();
+        return "Informacoes do Produto: \n-ID: " + getId() + "\n-Nome: " + getNome() + "\n-Preco: " + getPreco() + "\n-Quantidade: " + getQuantidade() + "\n-Marca: " + getMarca() + "\n-Tarja: " + getTarja() + "\n";
     }
 
 }

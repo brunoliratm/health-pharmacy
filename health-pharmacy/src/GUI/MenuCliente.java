@@ -14,8 +14,9 @@ public class MenuCliente {
     System.out.println("[2] Vizualizar produtos disponíveis");
     System.out.println("[3] Historico de Compras");
     System.out.println("[4] Informações do cliente");
-    System.out.println("[5] Retornar ao menu de login");
-    System.out.println("[6] Sair do aplicativo");
+    System.out.println("[5] Carrinho de Compras");
+    System.out.println("[6] Retornar ao menu de login");
+    System.out.println("[7] Sair do aplicativo");
 
     try {
       System.out.print("-->");
@@ -31,10 +32,11 @@ public class MenuCliente {
               System.out.println(cliente);
             }
           }
-        case "5":
+          MenuCliente.menuCliente(cliente1);
+        case "6":
           MenuEntrada.menu();
           break;
-        case "6":
+        case "7":
           System.exit(0);
           break;
         default:

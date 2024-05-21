@@ -65,7 +65,7 @@ public class MenuEntrada {
         try{
             System.out.print("--> ");
             int escolha = sc.nextInt();
-
+            Limpeza.limpeza();
             switch (escolha) {
                 case 1:
                     LoginCliente.loginCliente();
@@ -103,7 +103,7 @@ public class MenuEntrada {
         try{
             System.out.print("--> ");
             int escolha = sc.nextInt();
-
+            Limpeza.limpeza();
             switch (escolha) {
                 case 1:
                     CadastroCliente.cadastroCliente();

@@ -21,7 +21,7 @@ public class MenuFuncionario {
       String escolha = sc.nextLine();
       switch (escolha) {
         case "1":
-          MenuProdutos.menuProdutos();
+          MenuProdutos.menuProdutos(funcionario1);
           break;
         case "2":
           for (Funcionario funcionario : RepositorioFuncionario.listaFuncionario) {
