@@ -24,7 +24,7 @@ public class LoginCliente {
                         System.out.println("Login efetuado com sucesso!");
                         Thread.sleep(2000);
                         Cliente cliente1 = cliente;
-                        MenuCliente.menuCliente(cliente1);
+                        MenuCliente.menuCliente(sc, cliente1);
                         break;
                     } else {
                         tratamento.contaInvalida();    

@@ -8,8 +8,8 @@ import GUI.MenuProdutos;
 import Repositorio.RepositorioProduto;
 
 public class VizualizarProduto {
-  public static void vizualizarProduto(Funcionario funcionario1) throws InterruptedException {
-    Scanner sc = new Scanner(System.in);
+  public static void vizualizarProduto(Scanner sc) throws InterruptedException {
+
     System.out.println("Produtos disponíveis: ");
 
     for (Produto produto : RepositorioProduto.listaProduto) {
@@ -19,7 +19,8 @@ public class VizualizarProduto {
     Thread.sleep(2000);
     System.out.println("Pressione ENTER para retornar ao menu de produtos");
     sc.nextLine();
-    sc.close();
-    MenuProdutos.menuProdutos(funcionario1);
+    System.out.println();
+
+    //MenuProdutos.menuProdutos(funcionario1);
   }
 }
