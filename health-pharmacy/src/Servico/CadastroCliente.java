@@ -11,6 +11,7 @@ public class CadastroCliente {
     static Scanner sc = new Scanner(System.in);
 
     public static void cadastroCliente() throws InterruptedException {
+        RepositorioCliente.addCliente(new Cliente("","",0,"","","",""));
         System.out.println("Cadastrando novo cliente: \n");
         Thread.sleep(1000);
 
@@ -34,6 +35,7 @@ public class CadastroCliente {
             System.out.println("\nDados adicionais\n");
             System.out.print("Idade: ");
             int idadeCliente = sc.nextInt();
+            sc.nextLine();
             System.out.print("Endereço: ");
             String enderecoCliente = sc.nextLine();
             System.out.print("Telefone: ");
@@ -49,8 +51,9 @@ public class CadastroCliente {
                     Thread.sleep(1000);
                     System.out.println("Conta cadastrada com sucesso!");
                     Thread.sleep(2000);
+
+                    MenuCliente.menuCliente(sc, cliente1);
                     sc.close();
-                    MenuCliente.menuCliente(cliente1);
                 }
             }
         } catch (Exception e) {

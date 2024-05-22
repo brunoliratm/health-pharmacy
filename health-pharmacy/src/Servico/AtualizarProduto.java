@@ -8,8 +8,7 @@ import GUI.MenuProdutos;
 import Repositorio.RepositorioProduto;
 
 public class AtualizarProduto {
-  public static void atualizarProduto(Funcionario funcionario1) throws InterruptedException {
-    Scanner sc = new Scanner(System.in);
+  public static void atualizarProduto(Scanner sc) throws InterruptedException {
     System.out.println("Atualização de produto:\n");
     System.out.println("Digite o ID do produto que deseja atualizar: ");
 
@@ -33,8 +32,6 @@ public class AtualizarProduto {
         produto.setMarca(marca);
         System.out.println("Produto atualizado com sucesso!");
         Thread.sleep(2000);
-        sc.close();
-        MenuProdutos.menuProdutos(funcionario1);
         break;
       }
     }

@@ -11,7 +11,7 @@ import Tratamento.tratamento;
 public class CadastroProduto {
     static Scanner sc = new Scanner(System.in);
 
-    public static void cadastroProduto(Funcionario funcionario1) throws InterruptedException {
+    public static void cadastroProduto(Scanner sc) throws InterruptedException {
         System.out.println("Cadastrar novo Produto: \n");
         Thread.sleep(1000);
 
@@ -24,6 +24,7 @@ public class CadastroProduto {
             float preco = sc.nextFloat();
             System.out.print("Quantidade: ");
             int quantidade = sc.nextInt();
+            sc.nextLine();
             System.out.print("Marca: ");
             String marca = sc.nextLine();
             String tarja = tarja();
@@ -32,18 +33,16 @@ public class CadastroProduto {
             RepositorioProduto.addProduto(produtoo);
             System.out.println("Produto cadastrado");
             Thread.sleep(2000);
-            sc.close();
-            MenuProdutos.menuProdutos(funcionario1);
+
         } catch (Exception e) {
             tratamento.valorInvalido();
-            cadastroProduto(funcionario1);
         }
     }
 
     public static String tarja() throws InterruptedException {
         String tarja = null;
         System.out.println("Qual a tarja do medicamento");
-        System.out.println("[1]-Sem tarja\n [2]-tarja amarela\n [3]-tarja vermelha\n [4]tarja preta");
+        System.out.println(" [1]-Sem tarja\n [2]-tarja amarela\n [3]-tarja vermelha\n [4]tarja preta");
 
         System.out.print("--> ");
         String escolha = sc.nextLine();

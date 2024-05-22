@@ -10,15 +10,16 @@ import Tratamento.*;
 public class CadastroFuncionario {
 
     public static void cadastroFuncionario() throws InterruptedException {
+        RepositorioFuncionario.addFuncionario(new Funcionario("","", "","","", ""));
         Scanner sc = new Scanner(System.in);
         System.out.println("Cadastrando novo funcionario:\n");
         Thread.sleep(1000);
-
+        boolean cadastro = false;
         try {
             System.out.print("CPF(apenas os digitos, sem pontuacao): ");
             String CPFFuncionario = sc.nextLine();
             CPFFuncionario = CPFFuncionario.replaceAll("[^0-9]", "");
-            if (CPFFuncionario.length() != 14) {
+            if (CPFFuncionario.length() != 11) {
                 tratamento.CPFInvalido();
                 cadastroFuncionario();
             }
@@ -32,25 +33,29 @@ public class CadastroFuncionario {
             String telefoneFuncionario = sc.nextLine();
             System.out.print("Cargo: ");
             String CargoFuncionario = sc.nextLine();
-
-            for (Funcionario funcionario : RepositorioFuncionario.listaFuncionario) {
-                if (funcionario.getCPF().equals(CPFFuncionario) || funcionario.getEmail().equals(emailFuncionario)) {
-                    tratamento.contaJaExiste();
-                    MenuEntrada.menuRegistro();
-                } else {
-                    Funcionario Funcionario1 = new Funcionario(nome, emailFuncionario, telefoneFuncionario, CargoFuncionario, SenhaFuncionario, CPFFuncionario);
-                    RepositorioFuncionario.addFuncionario(Funcionario1);
-                    Thread.sleep(1000);
-                    System.out.println("Conta cadastrada com sucesso!");
-                    Thread.sleep(2000);
-                    sc.close();
-                    MenuFuncionario.menuFuncionario(Funcionario1);
+            if (!cadastro) {
+                for (Funcionario funcionario : RepositorioFuncionario.listaFuncionario) {
+                    if (funcionario.getCPF().equals(CPFFuncionario) || funcionario.getEmail().equals(emailFuncionario)) {
+                        tratamento.contaJaExiste();
+                        MenuEntrada.menuRegistro();
+                    } else {
+                        Funcionario Funcionario1 = new Funcionario(nome, emailFuncionario, telefoneFuncionario, CargoFuncionario, SenhaFuncionario, CPFFuncionario);
+                        Thread.sleep(1000);
+                        System.out.println("Conta cadastrada com sucesso!");
+                        Thread.sleep(2000);
+                        RepositorioFuncionario.addFuncionario(Funcionario1);
+                        MenuFuncionario.menuFuncionario(Funcionario1);
+                        break;
+                    }
                 }
             }
         } catch (Exception e) {
+            sc.nextLine();
+            System.out.println();
             tratamento.valorInvalido();
             cadastroFuncionario();
 
         }
+        sc.close();
     }
 }

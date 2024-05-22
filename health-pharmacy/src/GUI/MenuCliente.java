@@ -6,8 +6,11 @@ import Tratamento.tratamento;
 import java.util.Scanner;
 
 public class MenuCliente {
-  static Scanner sc = new Scanner(System.in);
-  public static void menuCliente(Cliente cliente1) throws InterruptedException{
+
+  public static void menuCliente(Scanner sc,Cliente cliente1) throws InterruptedException{
+    //Scanner sc = new Scanner(System.in);
+
+
     System.out.println("Menu do Cliente\n\n");
     Thread.sleep(1500);
     System.out.println("[1] Comprar produto");
@@ -19,33 +22,39 @@ public class MenuCliente {
     System.out.println("[7] Sair do aplicativo");
 
     try {
-      System.out.print("-->");
-      String escolha = sc.nextLine();
-
+      System.out.print("--> ");
+      int escolha = sc.nextInt();
       switch (escolha) {
-        case "1":
+        case 1:
           
           break;
-        case "4":
-          for(Cliente cliente : RepositorioCliente.listaClientes){
-            if (cliente.equals(cliente1)) {
-              System.out.println(cliente);
-            }
-          }
-          MenuCliente.menuCliente(cliente1);
-        case "6":
+        case 4:
+//          for(Cliente cliente : RepositorioCliente.listaClientes){
+//            if (cliente.equals(cliente1)) {
+              System.out.println(cliente1);
+//            }
+//          }
+          MenuCliente.menuCliente(sc, cliente1);
+          break;
+        case 6:
           MenuEntrada.menu();
           break;
-        case "7":
+        case 7:
           System.exit(0);
           break;
         default:
+          sc.nextLine();
+          System.out.println();
+          tratamento.opcaoInvalida();
+          menuCliente(sc, cliente1);
           break;
       }
       
     } catch (Exception e) {
+      sc.nextLine();
+      System.out.println();
       tratamento.valorInvalido();
-      menuCliente(cliente1);
+      menuCliente(sc, cliente1);
     }
   }
 }
