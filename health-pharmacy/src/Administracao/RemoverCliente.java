@@ -18,13 +18,13 @@ public class RemoverCliente {
         System.out.println("Cliente removido com sucesso!");
         sc.close();
         Thread.sleep(2000);
-        MenuAdm.menuADM();
+        MenuAdm.menuADM(sc);
         break;
       }
     }
     System.out.println("Cliente não encontrado!");
     sc.close();
     Thread.sleep(2000);
-    MenuAdm.menuADM();
+    MenuAdm.menuADM(sc);
   }
 }

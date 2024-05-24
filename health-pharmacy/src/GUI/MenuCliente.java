@@ -2,13 +2,13 @@ package GUI;
 
 import Entidade.Cliente;
 import Repositorio.RepositorioCliente;
+import Servico.VizualizarProduto;
 import Tratamento.tratamento;
 import java.util.Scanner;
 
 public class MenuCliente {
 
   public static void menuCliente(Scanner sc,Cliente cliente1) throws InterruptedException{
-    //Scanner sc = new Scanner(System.in);
 
 
     System.out.println("Menu do Cliente\n\n");
@@ -26,14 +26,20 @@ public class MenuCliente {
       int escolha = sc.nextInt();
       switch (escolha) {
         case 1:
-          
+          VizualizarProduto.comprarProduto(sc);
+          MenuCliente.menuCliente(sc, cliente1);
+          break;
+        case 2:
+          VizualizarProduto.vizualizarProduto(sc);
+          MenuCliente.menuCliente(sc, cliente1);
+          break;
+        case 3:
+          System.out.println("Seu histórico");
+          Thread.sleep(1500);
+          MenuCliente.menuCliente(sc, cliente1);
           break;
         case 4:
-//          for(Cliente cliente : RepositorioCliente.listaClientes){
-//            if (cliente.equals(cliente1)) {
-              System.out.println(cliente1);
-//            }
-//          }
+          System.out.println(cliente1);
           MenuCliente.menuCliente(sc, cliente1);
           break;
         case 6:

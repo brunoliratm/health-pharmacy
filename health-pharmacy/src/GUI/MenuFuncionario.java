@@ -28,14 +28,10 @@ public class MenuFuncionario {
           MenuProdutos.menuProdutos(funcionario1);
           break;
         case "2":
-          //for (Funcionario funcionario : RepositorioFuncionario.listaFuncionario) {
-            //if (funcionario.equals(funcionario1)) {
               System.out.println(funcionario1);
               System.out.println("\nPressione Enter para retornar");
               sc.nextLine();
               menuFuncionario(funcionario1);
-           // }
-         // }
           break;
         case "3":
           MenuEntrada.menu();

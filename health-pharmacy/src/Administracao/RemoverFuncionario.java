@@ -15,16 +15,14 @@ public class RemoverFuncionario {
             if(funcionario.getCPF().equals(id)){
                 RepositorioFuncionario.listaFuncionario.remove(funcionario);
                 System.out.println("Funcionário removido com sucesso!");
-                sc.close();
                 Thread.sleep(2000);
-                MenuAdm.menuADM();
+                MenuAdm.menuADM(sc);
                 break;
             }
         }
         System.out.println("Funcionário não encontrado!");
-        sc.close();
         Thread.sleep(2000);
-        MenuAdm.menuADM();
+        MenuAdm.menuADM(sc);
 
     }
 

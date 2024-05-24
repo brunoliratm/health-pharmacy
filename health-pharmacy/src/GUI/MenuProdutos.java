@@ -36,18 +36,15 @@ public class MenuProdutos {
           break;
         case "2":
           RemoverProduto.removerProduto(sc);
-
           break;
         case "3":
           AtualizarProduto.atualizarProduto(sc);
           break;
         case "4":
           VizualizarProduto.vizualizarProduto(sc);
-
           break;
         case "5":
           MenuFuncionario.menuFuncionario(funcionario1);
-
           break;
         case "6":
           System.out.println("Obrigado pela confiança, volte sempre!");
