@@ -10,7 +10,6 @@ import Tratamento.*;
 public class CadastroFuncionario {
 
     public static void cadastroFuncionario() throws InterruptedException {
-        RepositorioFuncionario.addFuncionario(new Funcionario("","", "","","", ""));
         Scanner sc = new Scanner(System.in);
         System.out.println("Cadastrando novo funcionario:\n");
         Thread.sleep(1000);
@@ -34,17 +33,25 @@ public class CadastroFuncionario {
             System.out.print("Cargo: ");
             String CargoFuncionario = sc.nextLine();
             if (!cadastro) {
+                if (RepositorioFuncionario.listaFuncionario.isEmpty()){
+                    Funcionario Funcionario1 = new Funcionario(nome, emailFuncionario, telefoneFuncionario, CargoFuncionario, SenhaFuncionario, CPFFuncionario);
+                    Thread.sleep(1000);
+                    System.out.println("Conta cadastrada com sucesso!");
+                    Thread.sleep(2000);
+                    RepositorioFuncionario.addFuncionario(Funcionario1);
+                    MenuFuncionario.menuFuncionario(Funcionario1);
+                }
                 for (Funcionario funcionario : RepositorioFuncionario.listaFuncionario) {
                     if (funcionario.getCPF().equals(CPFFuncionario) || funcionario.getEmail().equals(emailFuncionario)) {
                         tratamento.contaJaExiste();
                         MenuEntrada.menuRegistro();
                     } else {
-                        Funcionario Funcionario1 = new Funcionario(nome, emailFuncionario, telefoneFuncionario, CargoFuncionario, SenhaFuncionario, CPFFuncionario);
+                        Funcionario Funcionario2 = new Funcionario(nome, emailFuncionario, telefoneFuncionario, CargoFuncionario, SenhaFuncionario, CPFFuncionario);
                         Thread.sleep(1000);
                         System.out.println("Conta cadastrada com sucesso!");
                         Thread.sleep(2000);
-                        RepositorioFuncionario.addFuncionario(Funcionario1);
-                        MenuFuncionario.menuFuncionario(Funcionario1);
+                        RepositorioFuncionario.addFuncionario(Funcionario2);
+                        MenuFuncionario.menuFuncionario(Funcionario2);
                         break;
                     }
                 }

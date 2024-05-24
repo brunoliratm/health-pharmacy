@@ -12,7 +12,7 @@ public class LoginCliente {
 
     public static void loginCliente() throws InterruptedException {
         System.out.println("Login de Cliente\n");
-
+        sc.nextLine();
         try {
                 System.out.println("Digite seu CPF: ");
                 String cpf = sc.nextLine();
@@ -25,11 +25,10 @@ public class LoginCliente {
                         Thread.sleep(2000);
                         Cliente cliente1 = cliente;
                         MenuCliente.menuCliente(sc, cliente1);
-                        break;
                     } else {
                         tratamento.contaInvalida();    
                         MenuEntrada.menuLogin();
-                        break;   
+                        break;
                     }
                 }    
         } catch (Exception e) {

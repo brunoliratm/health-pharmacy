@@ -12,9 +12,8 @@ public class VerFuncionarios {
             System.out.println(funcionario);
         }
         System.out.println("Pressione enter para retornar ao menu de administração.");
-        sc.nextLine();
-        sc.close();
-        MenuAdm.menuADM();
+
+        MenuAdm.menuADM(sc);
     }
 
 }

@@ -11,7 +11,7 @@ public class CadastroCliente {
     static Scanner sc = new Scanner(System.in);
 
     public static void cadastroCliente() throws InterruptedException {
-        RepositorioCliente.addCliente(new Cliente("","",0,"","","",""));
+
         System.out.println("Cadastrando novo cliente: \n");
         Thread.sleep(1000);
 
@@ -41,6 +41,15 @@ public class CadastroCliente {
             System.out.print("Telefone: ");
             String telefoneCliente = sc.nextLine();
 
+            if (RepositorioCliente.listaClientes.isEmpty()){
+                Cliente cliente1 = new Cliente(nomeCliente, emailCliente, idadeCliente, enderecoCliente, telefoneCliente, SenhaCliente, cpfCliente);
+                RepositorioCliente.addCliente(cliente1);
+                Thread.sleep(1000);
+                System.out.println("Conta cadastrada com sucesso!");
+                Thread.sleep(2000);
+
+                MenuCliente.menuCliente(sc, cliente1);
+            }
             for (Cliente cliente : RepositorioCliente.listaClientes) {
                 if (cliente.getCPF().equals(cpfCliente) || cliente.getEmail().equals(emailCliente)) {
                     tratamento.contaJaExiste();

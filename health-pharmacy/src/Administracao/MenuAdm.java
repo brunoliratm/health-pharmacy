@@ -5,8 +5,8 @@ import java.util.Scanner;
 import GUI.MenuEntrada;
 
 public class MenuAdm {
-    public static void menuADM() throws InterruptedException{
-        Scanner sc = new Scanner(System.in);
+    public static void menuADM(Scanner sc) throws InterruptedException{
+        sc.nextLine();
         System.out.println("Menu de Administração\n");
         Thread.sleep(1500);
         System.out.println("Digite o número da opção desejada:\n");
@@ -48,7 +48,7 @@ public class MenuAdm {
             default:
                 System.out.println("Opção inválida!");
                 Thread.sleep(2000);
-                menuADM();
+                menuADM(sc);
                 break;
         }
 

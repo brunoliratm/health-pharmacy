@@ -37,7 +37,7 @@ public class MenuEntrada {
                     menuLogin();
                     break;
                 case 3:
-                    MenuAdm.menuADM();
+                    MenuAdm.menuADM(sc);
                     break;
                 case 4:
                     System.out.println("Obrigado pela confiança, volte sempre!");
