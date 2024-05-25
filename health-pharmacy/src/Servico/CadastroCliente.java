@@ -14,7 +14,7 @@ public class CadastroCliente {
 
         System.out.println("Cadastrando novo cliente: \n");
         Thread.sleep(1000);
-
+        boolean contaCadastrada = false;
         try {
             System.out.print("CPF (apenas os digitos, sem pontuacao): ");
             String cpfCliente = sc.nextLine();
@@ -47,22 +47,27 @@ public class CadastroCliente {
                 Thread.sleep(1000);
                 System.out.println("Conta cadastrada com sucesso!");
                 Thread.sleep(2000);
-
+                contaCadastrada = true;
                 MenuCliente.menuCliente(sc, cliente1);
-            }
-            for (Cliente cliente : RepositorioCliente.listaClientes) {
-                if (cliente.getCPF().equals(cpfCliente) || cliente.getEmail().equals(emailCliente)) {
-                    tratamento.contaJaExiste();
-                    MenuEntrada.menu();
-                } else {
-                    Cliente cliente1 = new Cliente(nomeCliente, emailCliente, idadeCliente, enderecoCliente, telefoneCliente, SenhaCliente, cpfCliente);
-                    RepositorioCliente.addCliente(cliente1);
-                    Thread.sleep(1000);
-                    System.out.println("Conta cadastrada com sucesso!");
-                    Thread.sleep(2000);
 
-                    MenuCliente.menuCliente(sc, cliente1);
-                    sc.close();
+            }
+            if (!contaCadastrada) {
+                for (Cliente cliente : RepositorioCliente.listaClientes) {
+                    if (cliente.getCPF().equals(cpfCliente) || cliente.getEmail().equals(emailCliente)) {
+                        tratamento.contaJaExiste();
+                        MenuEntrada.menu();
+
+                    } else {
+                        Cliente cliente1 = new Cliente(nomeCliente, emailCliente, idadeCliente, enderecoCliente, telefoneCliente, SenhaCliente, cpfCliente);
+                        RepositorioCliente.addCliente(cliente1);
+                        Thread.sleep(1000);
+                        System.out.println("Conta cadastrada com sucesso!");
+                        Thread.sleep(2000);
+
+                        MenuCliente.menuCliente(sc, cliente1);
+
+                        sc.close();
+                    }
                 }
             }
         } catch (Exception e) {

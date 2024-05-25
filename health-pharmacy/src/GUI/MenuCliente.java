@@ -43,7 +43,6 @@ public class MenuCliente {
           MenuCliente.menuCliente(sc, cliente1);
           break;
         case 6:
-          MenuEntrada.menu();
           break;
         case 7:
           System.exit(0);

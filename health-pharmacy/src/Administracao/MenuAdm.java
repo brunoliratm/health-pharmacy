@@ -26,6 +26,7 @@ public class MenuAdm {
                 break;
             case "2":
                 RemoverCliente.removerCliente();
+                System.out.println();
                 break;
             case "3":
                 //HistoricoVendas.historicoVendas();
@@ -46,6 +47,7 @@ public class MenuAdm {
                 sc.close();
                 break;
             default:
+                sc.nextLine();
                 System.out.println("Opção inválida!");
                 Thread.sleep(2000);
                 menuADM(sc);
