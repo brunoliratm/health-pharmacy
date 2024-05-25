@@ -25,6 +25,7 @@ public class LoginCliente {
                         Thread.sleep(2000);
                         Cliente cliente1 = cliente;
                         MenuCliente.menuCliente(sc, cliente1);
+                        break;
                     } else {
                         tratamento.contaInvalida();    
                         MenuEntrada.menuLogin();

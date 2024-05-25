@@ -14,7 +14,6 @@ public class VerClientes {
 
         System.out.println("Pressione enter para retornar ao menu de administração.");
         sc.nextLine();
-        sc.close();
         MenuAdm.menuADM(sc);
     }
 

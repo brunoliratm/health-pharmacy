@@ -3,6 +3,11 @@ package GUI;
 import java.util.Scanner;
 
 import Administracao.MenuAdm;
+import Administracao.RemoverCliente;
+import Entidade.Cliente;
+import Entidade.Funcionario;
+import Repositorio.RepositorioCliente;
+import Repositorio.RepositorioFuncionario;
 import Servico.CadastroCliente;
 import Servico.CadastroFuncionario;
 import Servico.LoginCliente;
@@ -15,6 +20,8 @@ public class MenuEntrada {
     //Menu Inicial
     public static void menu() throws InterruptedException {
         Limpeza.limpeza();
+        RepositorioCliente.addCliente(new Cliente("a", "a",4,"l","3","a","123"));
+        RepositorioFuncionario.addFuncionario(new Funcionario("a","q","1","s","a","124"));
         System.out.println("  HEALTH  PHARMACY\n");
         Thread.sleep(2000);
 

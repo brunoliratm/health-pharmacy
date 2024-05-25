@@ -16,14 +16,12 @@ public class RemoverCliente {
       if(cliente.getCPF().equals(id)){
         RepositorioCliente.listaClientes.remove(cliente);
         System.out.println("Cliente removido com sucesso!");
-        sc.close();
         Thread.sleep(2000);
         MenuAdm.menuADM(sc);
         break;
       }
     }
     System.out.println("Cliente não encontrado!");
-    sc.close();
     Thread.sleep(2000);
     MenuAdm.menuADM(sc);
   }
