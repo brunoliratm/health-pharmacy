@@ -54,6 +54,19 @@ git clone https://github.com/brunoliratm/health-pharmacy.git
 </details>
 </br>
 
+## :nerd_face: Project Update
+
+- [x] Start the project
+- [x] Migrate to Maven
+- [x] Connect to database
+- [ ] Complete all classes
+- [ ] carry out treatments
+- [ ] Create a web page
+
+Update Date: {date}
+
+</br>
+
 ## :zombie:Credits
 
 | <a href="https://github.com/brunoliratm"><img src="https://avatars.githubusercontent.com/u/114788642?v=4" float="left" width="40px" height=40px><p>BrunoMagno</p></a> | <a href="https://github.com/P4UL0Jr"><img src="https://avatars.githubusercontent.com/u/127964717?v=4" float="left" width="40px" height="40px"><p>P4ULOjr</p></a> |
