@@ -54,6 +54,26 @@ git clone https://github.com/brunoliratm/health-pharmacy.git
 </details>
 </br>
 
+## :nerd_face: Project Update
+
+:white_check_mark: Completed
+- [x] Project initialization
+- [x] Migration to Maven build system
+- [x] Established database connection
+
+:hourglass_flowing_sand: In Progress
+- [ ] Implementation of all Java classes
+- [ ] Development of data processing logic
+- [ ] Carry out treatments
+- [ ] Updating UML diagrams
+      
+:spiral_notepad: To Do
+- [ ] Creation of web interface
+      
+:floppy_disk:***Last Updated: May 27, 2024***
+
+</br>
+
 ## :zombie:Credits
 
 | <a href="https://github.com/brunoliratm"><img src="https://avatars.githubusercontent.com/u/114788642?v=4" float="left" width="40px" height=40px><p>BrunoMagno</p></a> | <a href="https://github.com/P4UL0Jr"><img src="https://avatars.githubusercontent.com/u/127964717?v=4" float="left" width="40px" height="40px"><p>P4ULOjr</p></a> |
