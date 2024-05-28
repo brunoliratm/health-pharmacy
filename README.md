@@ -64,6 +64,7 @@ git clone https://github.com/brunoliratm/health-pharmacy.git
 :hourglass_flowing_sand: In Progress
 - [ ] Implementation of all Java classes
 - [ ] Development of data processing logic
+- [ ] Carry out treatments
 - [ ] Updating UML diagrams
       
 :spiral_notepad: To Do
