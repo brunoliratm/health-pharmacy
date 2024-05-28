@@ -1,8 +1,11 @@
-<h1 align="center"> 
+ <div align="center">
+    <img src="images/logo.png" width="300" height="300">
+   <h1 align="center"> 
   
   `Health-Pharmacy`
 
 </h1>
+</div>
 
 </br>
 
