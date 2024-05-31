@@ -20,7 +20,7 @@ public class VizualizarCarrinho {
 
       System.out.printf("\nValor total do carrinho: R$ %.2f\n", valorTotal);
     }
-    System.out.println("Pressione enter para retornar ao menu de administração.");
+    System.out.println("Pressione enter para retornar ao menu anterior");
     sc.nextLine();
   }
 }

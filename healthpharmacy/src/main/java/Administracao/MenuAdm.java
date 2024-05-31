@@ -15,7 +15,7 @@ public class MenuAdm {
         System.out.println("[1] Adicionar Funcionário");
         System.out.println("[2] Remover Funcionário");
         System.out.println("[3] Remover Cliente");
-        System.out.println("[4] Histórico de vendas");
+        System.out.println("[4] Informação da Farmácia");
         System.out.println("[5] Ver clientes cadastrados");
         System.out.println("[6] Ver funcionários cadastrados");
         System.out.println("[7] Retornar ao menu de login");
@@ -36,7 +36,7 @@ public class MenuAdm {
                 System.out.println();
                 break;
             case "4":
-                //HistoricoVendas.historicoVendas();
+                InformacaoFarmacia.informacaoFarmacia();
                 break;
             case "5":
                 VerClientes.verClientes();

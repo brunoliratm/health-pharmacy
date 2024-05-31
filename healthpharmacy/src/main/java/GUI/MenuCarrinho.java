@@ -1,14 +1,15 @@
 package GUI;
 
 import java.util.Scanner;
-
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import Entidade.Carrinho;
 import Entidade.Cliente;
 import Servico.AdicionarProdutoCarrinho;
+import Servico.FinalizarCompraCarrinho;
 import Servico.RemoverProdutoCarrinho;
 import Servico.VizualizarCarrinho;
+import Tratamento.Limpeza;
 
 public class MenuCarrinho {
     public static void menuCarrinho(Cliente cliente, EntityManager em) throws InterruptedException {
@@ -25,6 +26,7 @@ public class MenuCarrinho {
 
         String opcao = "1";
         do {
+            Limpeza.limpeza();
             System.out.println("\nCarrinho de compras\n");
             System.out.println("1 - Adicionar produto ao carrinho");
             System.out.println("2 - Remover produto do carrinho");
@@ -33,7 +35,7 @@ public class MenuCarrinho {
             System.out.println("0 - Voltar");
             System.out.print("--> ");
             opcao = sc.nextLine();
-
+            Limpeza.limpeza();
             switch (opcao) {
                 case "1":
                     AdicionarProdutoCarrinho.adicionarProdutoCarrinho(carrinho, em);
@@ -45,6 +47,7 @@ public class MenuCarrinho {
                     VizualizarCarrinho.visualizarCarrinho(carrinho);
                     break;
                 case "4":
+                    FinalizarCompraCarrinho.finalizarCompraCarrinho(carrinho, em);
                     break;
                 case "5":
                     System.out.println("Voltando ao menu anterior...");

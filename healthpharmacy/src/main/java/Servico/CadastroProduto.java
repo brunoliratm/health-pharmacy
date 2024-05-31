@@ -1,15 +1,96 @@
 package Servico;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import Entidade.Funcionario;
+import Entidade.Produto;
+import GUI.MenuProdutos;
 
 public class CadastroProduto {
-    
 
-    public static void cadastroProduto() throws InterruptedException {
+    public static void cadastroProduto(Funcionario funcionario) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
+        EntityManager em = emf.createEntityManager();
+
         System.out.println("Cadastrar novo Produto: \n");
         Thread.sleep(1000);
+
+        System.out.print("ID do produto: ");
+        String id = sc.nextLine();
+
+        Produto produtoExistente = em.find(Produto.class, id);
+        if (produtoExistente != null) {
+            System.out.println("Já existe um produto com esse ID!");
+            Thread.sleep(2000);
+            em.close();
+            emf.close();
+            MenuProdutos.menuProdutos(funcionario);
+            return;
+        }
+        System.out.print("Nome do produto: ");
+        String nome = sc.nextLine();
+
+        // Obter e validar preço
+        float preco;
+        while (true) {
+            System.out.print("Preço: ");
+            try {
+                preco = sc.nextFloat();
+                sc.nextLine();
+                if (preco <= 0) {
+                    throw new IllegalArgumentException("Preço deve ser maior que zero.");
+                }
+                break;
+            } catch (InputMismatchException | IllegalArgumentException e) {
+                System.out.println("Preço inválido. Digite um valor numérico positivo.");
+                sc.nextLine();
+            }
+        }
+
+        int quantidade;
+        while (true) {
+            System.out.print("Quantidade em estoque: ");
+            try {
+                quantidade = sc.nextInt();
+                sc.nextLine();
+                if (quantidade < 0) {
+                    throw new IllegalArgumentException("Quantidade deve ser maior ou igual a zero.");
+                }
+                break;
+            } catch (InputMismatchException | IllegalArgumentException e) {
+                System.out.println("Quantidade inválida. Digite um valor numérico inteiro não negativo.");
+                sc.nextLine();
+            }
+        }
+        System.out.print("Marca: ");
+        String marca = sc.nextLine();
+
+        String tarja = tarja();
+
+        Produto produto = new Produto(id, nome, preco, quantidade, marca, tarja);
+
+        try {
+            em.getTransaction().begin();
+            em.persist(produto);
+            em.getTransaction().commit();
+            System.out.println("Produto cadastrado com sucesso!");
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            System.err.println("Erro ao cadastrar produto: " + e.getMessage());
+        } finally{
+            em.close();
+            emf.close();
+            System.out.println("Pressione Enter para continuar...");
+            sc.nextLine();
+            MenuProdutos.menuProdutos(funcionario);
+        }
     }
 
     public static String tarja() throws InterruptedException {

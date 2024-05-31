@@ -57,7 +57,7 @@ public class CadastroCliente {
         }
         int Idade = Integer.parseInt(idade);
 
-        System.out.print("Telefone (ex: 99999 9999):  ");
+        System.out.print("Telefone (ex: 99999 9999): ");
         String telefone = sc.nextLine().replaceAll("[^0-9]", "");
         System.out.print("Email: ");
         String email = sc.nextLine();

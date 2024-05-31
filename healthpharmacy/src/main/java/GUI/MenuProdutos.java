@@ -1,7 +1,6 @@
 package GUI;
 
 import java.util.Scanner;
-
 import Entidade.Funcionario;
 import Servico.AtualizarProduto;
 import Servico.CadastroProduto;
@@ -11,9 +10,9 @@ import Tratamento.Limpeza;
 
 public class MenuProdutos {
 
-  public static void menuProdutos(Funcionario funcionario1) throws InterruptedException {
+  public static void menuProdutos(Funcionario funcionario) throws InterruptedException {
     Scanner sc = new Scanner(System.in);
-
+      Limpeza.limpeza();
       System.out.println("Menu de Produtos\n\n");
       Thread.sleep(1500);
       System.out.println("Digite o número da opção desejada:\n");
@@ -29,20 +28,20 @@ public class MenuProdutos {
       Limpeza.limpeza();
       switch (escolha) {
         case "1":
-
-          CadastroProduto.cadastroProduto();
+          CadastroProduto.cadastroProduto(funcionario);
           break;
         case "2":
-          RemoverProduto.removerProduto();
+          RemoverProduto.removerProduto(funcionario);
           break;
         case "3":
-          AtualizarProduto.atualizarProduto();
+          AtualizarProduto.atualizarProduto(funcionario);
           break;
         case "4":
-          VizualizarProduto.vizualizarProduto();
+          VizualizarProduto.visualizarProdutosDisponiveis();
+          menuProdutos(funcionario);
           break;
         case "5":
-          MenuFuncionario.menuFuncionario(funcionario1);
+          MenuFuncionario.menuFuncionario(funcionario);
           break;
         case "6":
           System.out.println("Obrigado pela confiança, volte sempre!");
@@ -53,7 +52,7 @@ public class MenuProdutos {
         default:
           sc.nextLine();
           System.out.println("Digite uma opção válida!");
-          menuProdutos(funcionario1);
+          menuProdutos(funcionario);
       }
   }
 }

@@ -16,16 +16,12 @@ public class tratamento {
         System.out.println("Digite uma opção válida!");
         Thread.sleep(2000);
     }
-    public static void cpfInvalido() throws InterruptedException{
-        System.out.println("Digite um CPF válido!");
-        Thread.sleep(2000);
-    }
     public static void CPFInvalido() throws InterruptedException{
         System.out.println("Digite um CPF válido");
         Thread.sleep(2000);
     }
     public static void SQLInvalido() throws InterruptedException{
-        System.out.println("Erro ao conectar com o banco de dados, tente novamente");
+        System.out.println("Erro ao conectar com o banco de dados, tente novamente mais tarde");
         Thread.sleep(2000);
     }
 

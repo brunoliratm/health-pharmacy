@@ -1,6 +1,11 @@
 package GUI;
 
 import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import Administracao.MenuAdm;
 import Servico.CadastroCliente;
 import Servico.LoginCliente;
@@ -109,7 +114,35 @@ public class MenuEntrada {
     // Start no APP
     public static void main(String[] args) throws InterruptedException {
         Limpeza.limpeza();
-        menu();
 
+        EntityManagerFactory emf = null;
+        EntityManager em = null;
+
+        int tentativas = 2;
+        while (tentativas > 0) {
+            try {
+                emf = Persistence.createEntityManagerFactory("jpa");
+                em = emf.createEntityManager(); 
+                em.getTransaction().begin();
+                em.getTransaction().commit(); 
+                break;
+            } catch (Exception e) {
+                tentativas--;
+                System.err.println("Erro ao conectar ao banco de dados. Tentando novamente...");
+                Thread.sleep(2000);
+            } finally {
+                if (em != null) {
+                    em.close(); 
+                }
+            }
+        }
+
+        if (emf != null) {
+            menu();
+        } else {
+            tratamento.SQLInvalido();
+            Thread.sleep(2000);
+            System.exit(0);
+        }
     }
 }
