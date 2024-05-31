@@ -47,7 +47,6 @@ public class MenuEntrada {
                 sc.close();
                 System.exit(0);
             default:
-                sc.nextLine();
                 tratamento.opcaoInvalida();
                 menu();
         }
@@ -64,20 +63,19 @@ public class MenuEntrada {
         System.out.println("[3] retornar ao menu anterior\n");
 
         System.out.print("--> ");
-        int escolha = sc.nextInt();
+        String escolha = sc.nextLine();
         Limpeza.limpeza();
         switch (escolha) {
-            case 1:
+            case "1":
                 LoginCliente.loginCliente();
                 break;
-            case 2:
+            case "2":
                 LoginFuncionario.loginFuncionario();
                 break;
-            case 3:
+            case "3":
                 menu();
                 break;
             default:
-                sc.nextLine();
                 tratamento.opcaoInvalida();
                 menuLogin();
                 break;
@@ -94,17 +92,16 @@ public class MenuEntrada {
         System.out.println("[2] retornar ao menu anterior\n");
 
         System.out.print("--> ");
-        int escolha = sc.nextInt();
+        String escolha = sc.nextLine();
         Limpeza.limpeza();
         switch (escolha) {
-            case 1:
+            case "1":
                 CadastroCliente.cadastroCliente();
                 break;
-            case 2:
+            case "2":
                 menu();
                 break;
             default:
-                sc.nextLine();
                 tratamento.opcaoInvalida();
                 menuRegistro();
                 break;
@@ -122,9 +119,9 @@ public class MenuEntrada {
         while (tentativas > 0) {
             try {
                 emf = Persistence.createEntityManagerFactory("jpa");
-                em = emf.createEntityManager(); 
+                em = emf.createEntityManager();
                 em.getTransaction().begin();
-                em.getTransaction().commit(); 
+                em.getTransaction().commit();
                 break;
             } catch (Exception e) {
                 tentativas--;
@@ -132,7 +129,7 @@ public class MenuEntrada {
                 Thread.sleep(2000);
             } finally {
                 if (em != null) {
-                    em.close(); 
+                    em.close();
                 }
             }
         }

@@ -7,6 +7,7 @@ import java.util.List;
 
 @Entity
 public class PedidoFinalizado {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,14 +16,14 @@ public class PedidoFinalizado {
     @JoinColumn(name = "cliente_cpf")
     private Cliente cliente;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) 
     @JoinColumn(name = "pedido_id")
     private List<ItemPedido> itens = new ArrayList<>();
 
     private LocalDateTime dataHora;
+    @Column(name = "custo_total")
     private double valorTotal;
 
-    // Construtores
     public PedidoFinalizado() {}
 
     public PedidoFinalizado(Cliente cliente, List<ItemPedido> itens) {
@@ -32,52 +33,63 @@ public class PedidoFinalizado {
         this.valorTotal = calcularValorTotal();
     }
 
-    private double calcularValorTotal() {
-        double total = 0;
-        for (ItemPedido item : itens) {
-            total += item.getPreco() * item.getQuantidade();
-        }
-        return total;
-    }
-
     public Long getId() {
-      return id;
+        return id;
     }
 
     public void setId(Long id) {
-      this.id = id;
+        this.id = id;
     }
 
     public Cliente getCliente() {
-      return cliente;
+        return cliente;
     }
 
     public void setCliente(Cliente cliente) {
-      this.cliente = cliente;
+        this.cliente = cliente;
     }
 
     public List<ItemPedido> getItens() {
-      return itens;
+        return itens;
     }
 
     public void setItens(List<ItemPedido> itens) {
-      this.itens = itens;
+        this.itens = itens;
     }
 
     public LocalDateTime getDataHora() {
-      return dataHora;
+        return dataHora;
     }
 
     public void setDataHora(LocalDateTime dataHora) {
-      this.dataHora = dataHora;
+        this.dataHora = dataHora;
     }
 
     public double getValorTotal() {
-      return valorTotal;
+        return valorTotal;
     }
 
     public void setValorTotal(double valorTotal) {
-      this.valorTotal = valorTotal;
+        this.valorTotal = valorTotal;
+    }
+
+    private double calcularValorTotal() {
+        return itens.stream()
+                .mapToDouble(item -> item.getPreco() * item.getQuantidade())
+                .sum();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Pedido #").append(id).append("\n");
+        sb.append("Cliente: ").append(cliente.getNome()).append("\n");
+        sb.append("Data/Hora: ").append(dataHora).append("\n");
+        sb.append("Itens:\n");
+        for (ItemPedido item : itens) {
+            sb.append("  - ").append(item).append("\n"); 
+        }
+        sb.append("Valor Total: R$ ").append(String.format("%.2f", valorTotal));
+        return sb.toString();
     }
 }
-

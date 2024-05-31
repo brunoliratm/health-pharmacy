@@ -13,7 +13,7 @@ public class ItemPedido {
   private Produto produto;
 
   private int quantidade;
-  private double preco; // Preço do produto no momento da compra
+  private double preco;
 
   public ItemPedido() {
   }

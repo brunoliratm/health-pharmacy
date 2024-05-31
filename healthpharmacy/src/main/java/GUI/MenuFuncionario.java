@@ -9,7 +9,7 @@ public class MenuFuncionario {
 
   public static void menuFuncionario(Funcionario funcionario) throws InterruptedException {
     Scanner sc = new Scanner(System.in);
-    System.out.println();
+    Limpeza.limpeza();
     System.out.println("Menu do Funcionário\n\n");
     Thread.sleep(1500);
     System.out.println("[1] Gereneciar produtos");

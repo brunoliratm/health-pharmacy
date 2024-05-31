@@ -19,8 +19,6 @@ public class AtualizarProduto {
         System.out.println("Atualização de produto:\n");
         System.out.print("Digite o ID do produto que deseja atualizar: ");
         String id = sc.nextLine();
-
-        // Buscar o produto no banco de dados
         Produto produto = em.find(Produto.class, id);
 
         if (produto == null) {

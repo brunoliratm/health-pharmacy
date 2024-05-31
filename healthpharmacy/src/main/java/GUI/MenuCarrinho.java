@@ -56,6 +56,7 @@ public class MenuCarrinho {
                     break;
                 default:
                     System.out.println("Opção inválida!");
+                    Thread.sleep(1500);
             }
         } while (opcao != "0");
     }

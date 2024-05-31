@@ -7,6 +7,7 @@ public class tratamento {
     }
     public static void contaJaExiste() throws InterruptedException{
         System.out.println("Esses dados já estão cadastrados no aplicativo, tente novamente ou faça login");
+        Thread.sleep(2000);
     }
     public static void valorInvalido() throws InterruptedException{
         System.out.println("Valor Inválido, tente novamente");

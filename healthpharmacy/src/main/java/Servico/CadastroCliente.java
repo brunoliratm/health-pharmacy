@@ -20,7 +20,6 @@ public class CadastroCliente {
 
         System.out.println("Cadastro de Cliente:\n");
 
-        // Obter e validar CPF
         System.out.print("CPF: ");
         String CPF = sc.nextLine().replaceAll("[^0-9]", "");
         if (CPF.length() != 11) {

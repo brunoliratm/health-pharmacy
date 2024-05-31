@@ -54,7 +54,6 @@ public class MenuAdm {
                 sc.close();
                 break;
             default:
-                sc.nextLine();
                 System.out.println("Opção inválida!");
                 Thread.sleep(2000);
                 menuADM();

@@ -29,7 +29,6 @@ public class LoginCliente {
         String senha = sc.nextLine();
 
         try {
-            // Buscar o cliente no banco de dados com base no CPF e senha
             Cliente cliente = em.createQuery(
                 "SELECT c FROM Cliente c WHERE c.CPF = :cpf AND c.senha = :senha", Cliente.class
             )

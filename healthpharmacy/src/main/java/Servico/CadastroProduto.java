@@ -35,7 +35,6 @@ public class CadastroProduto {
         System.out.print("Nome do produto: ");
         String nome = sc.nextLine();
 
-        // Obter e validar preço
         float preco;
         while (true) {
             System.out.print("Preço: ");
@@ -87,7 +86,7 @@ public class CadastroProduto {
         } finally{
             em.close();
             emf.close();
-            System.out.println("Pressione Enter para continuar...");
+            System.out.println("Pressione Enter para retornar ao menu anterior.");
             sc.nextLine();
             MenuProdutos.menuProdutos(funcionario);
         }

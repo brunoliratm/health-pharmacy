@@ -28,7 +28,7 @@ public class FinalizarCompraCarrinho {
             PedidoFinalizado pedido = new PedidoFinalizado(carrinho.getCliente(), itensPedido);
 
             em.getTransaction().begin();
-            em.persist(pedido); // Salva o pedido
+            em.persist(pedido);
             for (ItemPedido item : itensPedido) {
                 em.persist(item);
             }

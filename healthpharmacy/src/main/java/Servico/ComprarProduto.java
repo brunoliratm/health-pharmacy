@@ -32,7 +32,6 @@ public class ComprarProduto {
                 sc.nextLine();
 
                 if (quantidade > 0 && quantidade <= produto.getQuantidade()) {
-                    // Criar item do pedido
                     ItemPedido itemPedido = new ItemPedido();
                     itemPedido.setProduto(produto);
                     itemPedido.setQuantidade(quantidade);
@@ -45,7 +44,6 @@ public class ComprarProduto {
                     em.persist(itemPedido);
                     em.getTransaction().commit();
 
-                    // Atualizar o estoque do produto
                     produto.setQuantidade(produto.getQuantidade() - quantidade);
                     em.getTransaction().begin();
                     em.merge(produto);
@@ -61,7 +59,6 @@ public class ComprarProduto {
         } catch (NumberFormatException e) {
             System.out.println("ID do produto ou quantidade inválidos.");
         } catch (Exception e) {
-            // Em caso de erro, desfazer a transação (se estiver ativa)
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();
             }
