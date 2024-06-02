@@ -44,7 +44,7 @@ public class LoginFuncionario {
             tratamento.contaInvalida();
             em.close();
             emf.close();
-            MenuEntrada.menu();
+            MenuEntrada.menuLogin();
         }
     }
 }

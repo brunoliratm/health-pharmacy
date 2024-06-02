@@ -45,7 +45,7 @@ public class MenuProdutos {
           MenuFuncionario.menuFuncionario(funcionario);
           break;
         case "6":
-          System.out.println("Obrigado pela confiança, volte sempre!");
+          System.out.println("Obrigado pela confianca, volte sempre!");
           Thread.sleep(2000);
           sc.close();
           System.exit(0);

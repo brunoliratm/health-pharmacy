@@ -9,6 +9,7 @@ public class ItemPedido {
   private Long id;
 
   @ManyToOne
+
   @JoinColumn(name = "produto_id")
   private Produto produto;
 

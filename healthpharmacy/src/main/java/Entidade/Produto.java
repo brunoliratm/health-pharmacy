@@ -1,19 +1,21 @@
 package Entidade;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Produto {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+    @Column(length = 100)
     private String nome;
+    @Column(length = 20)
     private float preco;
+    @Column(length = 20)
     private int quantidade;
+    @Column(length = 100)
     private String marca;
+    @Column(length = 20)
     private String tarja;
 
 

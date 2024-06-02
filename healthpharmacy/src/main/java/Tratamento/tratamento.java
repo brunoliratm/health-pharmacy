@@ -6,19 +6,19 @@ public class tratamento {
         Thread.sleep(2000);
     }
     public static void contaJaExiste() throws InterruptedException{
-        System.out.println("Esses dados já estão cadastrados no aplicativo, tente novamente ou faça login");
+        System.out.println("Esses dados ja estão cadastrados no aplicativo, tente novamente ou faça login");
         Thread.sleep(2000);
     }
     public static void valorInvalido() throws InterruptedException{
-        System.out.println("Valor inserido Inválido, tente novamente");
+        System.out.println("Valor inserido Invalido, tente novamente");
         Thread.sleep(2000);
     }
     public static void opcaoInvalida() throws InterruptedException{
-        System.out.println("Digite uma opção válida!");
+        System.out.println("Digite uma opcao valida!");
         Thread.sleep(2000);
     }
     public static void CPFInvalido() throws InterruptedException{
-        System.out.println("Digite um CPF válido");
+        System.out.println("Digite um CPF valido");
         Thread.sleep(2000);
     }
     public static void SQLInvalido() throws InterruptedException{

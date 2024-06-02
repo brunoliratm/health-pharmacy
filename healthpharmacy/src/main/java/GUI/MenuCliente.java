@@ -61,7 +61,7 @@ public class MenuCliente {
         MenuEntrada.menu();
         break;
       case "7":
-        System.out.println("Obrigado pela confiança, volte sempre!");
+        System.out.println("Obrigado pela confianca, volte sempre!");
         Thread.sleep(2000);
         sc.close();
         System.exit(0);

@@ -13,7 +13,7 @@ import Tratamento.tratamento;
 public class AdicionarFuncionario {
     public static void adicionarFuncionario() throws InterruptedException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Adicionar Funcionário\n");
+        System.out.println("Adicionar Funcionario\n");
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
         EntityManager em = emf.createEntityManager();
         System.out.print("CPF: ");
@@ -25,8 +25,7 @@ public class AdicionarFuncionario {
         }
 
         try {
-            Funcionario funcionarioExistente = em.createQuery("SELECT f FROM Funcionario f WHERE f.CPF = :CPF", Funcionario.class)
-                    .setParameter("CPF", CPF).getSingleResult();
+            Funcionario funcionarioExistente = em.createQuery("SELECT f FROM Funcionario f WHERE f.CPF = :CPF", Funcionario.class).setParameter("CPF", CPF).getSingleResult();
             tratamento.contaJaExiste();
             em.close();
             emf.close();
@@ -36,9 +35,18 @@ public class AdicionarFuncionario {
         }
         System.out.print("Nome: ");
         String nome = sc.nextLine();
-        System.out.print("Telefone(ex: 99999 9999): ");
-        String telefone = sc.nextLine();
-        telefone = telefone.replaceAll("[^0-9]", "");
+        String telefone;
+        while (true) {
+            System.out.print("Telefone (ex: (81)99999 9999): ");
+            telefone = sc.nextLine().replaceAll("[^0-9]", "");
+
+            if (telefone.length() == 11) {
+                telefone = telefone.substring(0, 5) + " " + telefone.substring(5);
+                break;
+            } else {
+                System.out.println("Telefone inválido. Digite 11 dígitos.");
+            }
+        }
         System.out.print("Email: ");
         String email = sc.nextLine();
         System.out.print("Senha: ");
@@ -49,7 +57,7 @@ public class AdicionarFuncionario {
         em.getTransaction().begin();
         em.persist(funcionario);
         em.getTransaction().commit();
-        System.out.println("Funcionário adicionado com sucesso!");
+        System.out.println("Funcionario adicionado com sucesso!");
         em.close();
         emf.close();
         Thread.sleep(2000);

@@ -45,7 +45,7 @@ public class LoginCliente {
             tratamento.contaInvalida();
             em.close();
             emf.close();
-            MenuEntrada.menu();
+            MenuEntrada.menuLogin();
         }
     }
 }
