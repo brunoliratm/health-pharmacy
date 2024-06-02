@@ -7,6 +7,7 @@ import Servico.CadastroProduto;
 import Servico.RemoverProduto;
 import Servico.VizualizarProduto;
 import Tratamento.Limpeza;
+import Tratamento.tratamento;
 
 public class MenuProdutos {
 
@@ -51,7 +52,7 @@ public class MenuProdutos {
           break;
         default:
           sc.nextLine();
-          System.out.println("Digite uma opção válida!");
+          tratamento.opcaoInvalida();
           menuProdutos(funcionario);
       }
   }

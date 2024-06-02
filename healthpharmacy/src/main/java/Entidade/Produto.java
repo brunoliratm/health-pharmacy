@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Produto {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String nome;
     private float preco;
     private int quantidade;
@@ -17,7 +17,7 @@ public class Produto {
     private String tarja;
 
 
-    public Produto(String id, String nome, float preco, int quantidade, String marca, String tarja) {
+    public Produto(Long id, String nome, float preco, int quantidade, String marca, String tarja) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
@@ -26,10 +26,14 @@ public class Produto {
         this.tarja = tarja;
     }
 
-    public String getId() {
+    public Produto() {
+
+    }
+
+    public Long getId() {
         return id;
     }
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

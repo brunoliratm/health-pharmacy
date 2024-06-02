@@ -25,8 +25,7 @@ public class ExibirHistoricoCompras {
     } else {
       System.out.println("Histórico de Compras:");
       for (PedidoFinalizado pedido : pedidos) {
-        System.out.println("");
-        System.out.println("------------------------");
+        System.out.println("\n------------------------");
         System.out.println("Pedido #" + pedido.getId());
         System.out.println("Data: " + pedido.getDataHora());
         System.out.println("Valor Total: R$ " + String.format("%.2f", pedido.getValorTotal()));

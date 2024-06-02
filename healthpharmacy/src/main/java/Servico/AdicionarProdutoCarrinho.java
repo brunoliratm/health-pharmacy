@@ -4,9 +4,10 @@ import java.util.Scanner;
 import javax.persistence.EntityManager;
 import Entidade.Carrinho;
 import Entidade.Produto;
+import Tratamento.tratamento;
 
 public class AdicionarProdutoCarrinho {
-  public static void adicionarProdutoCarrinho(Carrinho carrinho, EntityManager em) {
+  public static void adicionarProdutoCarrinho(Carrinho carrinho, EntityManager em) throws InterruptedException {
     Scanner sc = new Scanner(System.in);
     System.out.print("Digite o ID do produto que deseja adicionar: ");
     String idProdutoStr = sc.nextLine();
@@ -22,7 +23,6 @@ public class AdicionarProdutoCarrinho {
                 sc.nextLine();
 
                 if (quantidade > 0 && quantidade <= produto.getQuantidade()) {
-                    @SuppressWarnings("unlikely-arg-type")
                     Produto produtoNoCarrinho = carrinho.getProdutos().stream()
                             .filter(p -> p.getId().equals(idProduto))
                             .findFirst()
@@ -55,7 +55,7 @@ public class AdicionarProdutoCarrinho {
             System.out.println("Produto não encontrado.");
         }
     } catch (NumberFormatException e) {
-        System.out.println("ID do produto ou quantidade inválidos.");
+        tratamento.valorInvalido();
     } catch (Exception e) {
         if (em.getTransaction().isActive()) {
             em.getTransaction().rollback();

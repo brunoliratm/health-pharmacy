@@ -10,7 +10,7 @@ public class tratamento {
         Thread.sleep(2000);
     }
     public static void valorInvalido() throws InterruptedException{
-        System.out.println("Valor Inválido, tente novamente");
+        System.out.println("Valor inserido Inválido, tente novamente");
         Thread.sleep(2000);
     }
     public static void opcaoInvalida() throws InterruptedException{

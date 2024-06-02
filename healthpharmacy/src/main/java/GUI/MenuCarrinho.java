@@ -10,6 +10,7 @@ import Servico.FinalizarCompraCarrinho;
 import Servico.RemoverProdutoCarrinho;
 import Servico.VizualizarCarrinho;
 import Tratamento.Limpeza;
+import Tratamento.tratamento;
 
 public class MenuCarrinho {
     public static void menuCarrinho(Cliente cliente, EntityManager em) throws InterruptedException {
@@ -24,7 +25,7 @@ public class MenuCarrinho {
             em.getTransaction().commit();
         }
 
-        String opcao = "1";
+        String opcao;
         do {
             Limpeza.limpeza();
             System.out.println("\nCarrinho de compras\n");
@@ -55,9 +56,9 @@ public class MenuCarrinho {
                     opcao = "0";
                     break;
                 default:
-                    System.out.println("Opção inválida!");
+                    tratamento.opcaoInvalida();
                     Thread.sleep(1500);
             }
-        } while (opcao != "0");
+        } while (!opcao.equals("0"));
     }
 }

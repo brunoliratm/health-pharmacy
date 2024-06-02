@@ -21,7 +21,7 @@ public class CadastroProduto {
         Thread.sleep(1000);
 
         System.out.print("ID do produto: ");
-        String id = sc.nextLine();
+        Long id = sc.nextLong();
 
         Produto produtoExistente = em.find(Produto.class, id);
         if (produtoExistente != null) {
@@ -92,7 +92,7 @@ public class CadastroProduto {
         }
     }
 
-    public static String tarja() throws InterruptedException {
+    public static String tarja() {
         Scanner sc = new Scanner(System.in);
         String tarja = null;
         System.out.println("Qual a tarja do medicamento");
