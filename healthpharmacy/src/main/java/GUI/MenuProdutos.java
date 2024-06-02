@@ -22,7 +22,7 @@ public class MenuProdutos {
       System.out.println("[3] Editar produto");
       System.out.println("[4] Visualizar produtos");
       System.out.println("[5] Retornar ao menu anterior");
-      System.out.println("[6] Sair do aplicativo");
+      System.out.println("[6] Sair do aplicativo\n");
 
       System.out.print("--> ");
       String escolha = sc.nextLine();

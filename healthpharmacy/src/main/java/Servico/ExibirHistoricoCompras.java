@@ -1,5 +1,6 @@
 package Servico;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 import javax.persistence.EntityManager;
@@ -27,12 +28,13 @@ public class ExibirHistoricoCompras {
       for (PedidoFinalizado pedido : pedidos) {
         System.out.println("\n------------------------");
         System.out.println("Pedido #" + pedido.getId());
-        System.out.println("Data: " + pedido.getDataHora());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"); // Define o formato desejado
+        String dataFormatada = pedido.getDataHora().format(formatter);
+        System.out.println("Data: " + dataFormatada);
         System.out.println("Valor Total: R$ " + String.format("%.2f", pedido.getValorTotal()));
 
-        System.out.println("\nItens:");
         for (ItemPedido item : pedido.getItens()) {
-          System.out.println("- " + item.getProduto().getNome() + " (x" + item.getQuantidade() + ")");
+          System.out.println("Produto: " + item.getProduto().getNome() + "\nMarca:" + item.getProduto().getMarca() + "\nQuantidade: " + item.getQuantidade() + "\n");
         }
       }
     }

@@ -14,7 +14,7 @@ import Entidade.Produto;
 
 public class ComprarProduto {
 
-    public static void comprarProduto(Cliente cliente) {
+    public static void comprarProduto(Cliente cliente) throws InterruptedException {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
         EntityManager em = emf.createEntityManager();
         Scanner sc = new Scanner(System.in);
@@ -66,6 +66,7 @@ public class ComprarProduto {
         }
         em.close();
         emf.close();
+        Thread.sleep(1500);
         System.out.print("\nPressione Enter para voltar ao menu anterior.");
         sc.nextLine();
     }

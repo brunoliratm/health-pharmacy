@@ -12,7 +12,7 @@ public class MenuAdm {
         Scanner sc = new Scanner(System.in);
         System.out.println("Menu de Administracao\n");
         Thread.sleep(1500);
-        System.out.println("Digite o numero da opçao desejada:\n");
+        System.out.println("Digite o numero da opcao desejada:\n");
         System.out.println("[1] Adicionar Funcionario");
         System.out.println("[2] Remover Funcionario");
         System.out.println("[3] Remover Cliente");

@@ -79,17 +79,4 @@ public class PedidoFinalizado {
                 .sum();
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Pedido #").append(id).append("\n");
-        sb.append("Cliente: ").append(cliente.getNome()).append("\n");
-        sb.append("Data/Hora: ").append(dataHora).append("\n");
-        sb.append("Itens:\n");
-        for (ItemPedido item : itens) {
-            sb.append("  - ").append(item).append("\n"); 
-        }
-        sb.append("Valor Total: R$ ").append(String.format("%.2f", valorTotal));
-        return sb.toString();
-    }
 }

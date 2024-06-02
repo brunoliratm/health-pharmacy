@@ -18,7 +18,7 @@ public class VizualizarProduto {
     if (produtos.isEmpty()) {
       System.out.println("\nNao ha produtos disponiveis no momento.");
     } else {
-      System.out.println("\nProdutos Disponiveis:");
+      System.out.println("Produtos Disponiveis:\n");
       for (Produto produto : produtos) {
         System.out.println(produto);
       }
