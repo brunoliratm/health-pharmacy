@@ -46,13 +46,13 @@ public class AdicionarProdutoCarrinho {
 
                     System.out.println("Produto adicionado ao carrinho com sucesso!");
                 } else {
-                    System.out.println("Quantidade inválida ou insuficiente no estoque.");
+                    System.out.println("Quantidade invalida ou insuficiente no estoque.");
                 }
             } else {
-                System.out.println("Produto sem estoque disponível.");
+                System.out.println("Produto sem estoque disponivel.");
             }
         } else {
-            System.out.println("Produto não encontrado.");
+            System.out.println("Produto nao encontrado.");
         }
     } catch (NumberFormatException e) {
         tratamento.valorInvalido();
@@ -62,6 +62,6 @@ public class AdicionarProdutoCarrinho {
         }
         System.err.println("Erro ao adicionar produto ao carrinho: " + e.getMessage());
     }
-}
-
+    Thread.sleep(2000);
+  }
 }

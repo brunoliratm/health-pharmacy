@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 import Entidade.Funcionario;
 import Entidade.Produto;
 import GUI.MenuProdutos;
+import Tratamento.tratamento;
 
 public class CadastroProduto {
 
@@ -25,7 +26,7 @@ public class CadastroProduto {
 
         Produto produtoExistente = em.find(Produto.class, id);
         if (produtoExistente != null) {
-            System.out.println("Já existe um produto com esse ID!");
+            System.out.println("Ja existe um produto com esse ID!");
             Thread.sleep(2000);
             em.close();
             emf.close();
@@ -37,16 +38,16 @@ public class CadastroProduto {
 
         float preco;
         while (true) {
-            System.out.print("Preço: ");
+            System.out.print("Preco: ");
             try {
                 preco = sc.nextFloat();
                 sc.nextLine();
                 if (preco <= 0) {
-                    throw new IllegalArgumentException("Preço deve ser maior que zero.");
+                    throw new IllegalArgumentException("Preco deve ser maior que zero.");
                 }
                 break;
             } catch (InputMismatchException | IllegalArgumentException e) {
-                System.out.println("Preço inválido. Digite um valor numérico positivo.");
+                tratamento.valorInvalido();
                 sc.nextLine();
             }
         }
@@ -62,7 +63,7 @@ public class CadastroProduto {
                 }
                 break;
             } catch (InputMismatchException | IllegalArgumentException e) {
-                System.out.println("Quantidade inválida. Digite um valor numérico inteiro não negativo.");
+                System.out.println("Quantidade invalida. Digite um valor numérico inteiro nao negativo.");
                 sc.nextLine();
             }
         }
@@ -96,7 +97,7 @@ public class CadastroProduto {
         Scanner sc = new Scanner(System.in);
         String tarja = null;
         System.out.println("Qual a tarja do medicamento");
-        System.out.println(" [1]-Sem tarja\n [2]-tarja amarela\n [3]-tarja vermelha\n [4]tarja preta");
+        System.out.println(" [1] Sem tarja\n [2] tarja amarela\n [3]-tarja vermelha\n [4] tarja preta");
 
         System.out.print("--> ");
         String escolha = sc.nextLine();

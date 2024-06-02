@@ -12,7 +12,7 @@ import Entidade.ItemPedido;
 public class FinalizarCompraCarrinho {
     public static void finalizarCompraCarrinho(Carrinho carrinho, EntityManager em) throws InterruptedException {
         if (carrinho.getProdutos().isEmpty()) {
-            System.out.println("Seu carrinho está vazio. Não é possível finalizar a compra.");
+            System.out.println("Seu carrinho esta vazio. Nao e possível finalizar a compra.");
             return;
         }
         try {

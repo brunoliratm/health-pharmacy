@@ -16,13 +16,13 @@ public class AtualizarProduto {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
         EntityManager em = emf.createEntityManager();
 
-        System.out.println("Atualização de produto:\n");
+        System.out.println("Atualizacao de produto:\n");
         System.out.print("Digite o ID do produto que deseja atualizar: ");
         String id = sc.nextLine();
         Produto produto = em.find(Produto.class, id);
 
         if (produto == null) {
-            System.out.println("Produto não encontrado!");
+            System.out.println("Produto nao encontrado!");
             Thread.sleep(2000);
             em.close();
             emf.close();

@@ -16,9 +16,9 @@ public class VizualizarProduto {
     List<Produto> produtos = query.getResultList();
 
     if (produtos.isEmpty()) {
-      System.out.println("\nNão há produtos disponíveis no momento.");
+      System.out.println("\nNao ha produtos disponiveis no momento.");
     } else {
-      System.out.println("\nProdutos Disponíveis:");
+      System.out.println("\nProdutos Disponiveis:");
       for (Produto produto : produtos) {
         System.out.println(produto);
       }

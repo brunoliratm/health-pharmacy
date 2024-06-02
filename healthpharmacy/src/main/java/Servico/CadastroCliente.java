@@ -42,7 +42,7 @@ public class CadastroCliente {
 
         System.out.print("Nome: ");
         String nome = sc.nextLine();
-        System.out.print("Endereço: ");
+        System.out.print("Endereco: ");
         String endereco = sc.nextLine();
         System.out.print("Idade: ");
         int idade;
@@ -51,7 +51,7 @@ public class CadastroCliente {
             try {
                 idade = Integer.parseInt(sc.nextLine().replaceAll("[^0-9]", ""));
                 if (idade < 18) {
-                    throw new IllegalArgumentException("Você deve ter mais de 18 anos para se cadastrar.");
+                    throw new IllegalArgumentException("Voce deve ter mais de 18 anos para se cadastrar.");
                 }
                 break;
             } catch (NumberFormatException e) {
@@ -70,7 +70,7 @@ public class CadastroCliente {
                 telefone = telefone.substring(0, 5) + " " + telefone.substring(5);
                 break;
             } else {
-                System.out.println("Telefone inválido. Digite 11 dígitos.");
+                System.out.println("Telefone invalido. Digite 11 dígitos.");
             }
         }
         System.out.print("Email: ");

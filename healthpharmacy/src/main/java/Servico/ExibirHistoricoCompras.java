@@ -21,9 +21,9 @@ public class ExibirHistoricoCompras {
     List<PedidoFinalizado> pedidos = query.getResultList();
 
     if (pedidos.isEmpty()) {
-      System.out.println("Você ainda não fez nenhuma compra.");
+      System.out.println("Você ainda nao fez nenhuma compra.");
     } else {
-      System.out.println("Histórico de Compras:");
+      System.out.println("Historico de Compras:");
       for (PedidoFinalizado pedido : pedidos) {
         System.out.println("\n------------------------");
         System.out.println("Pedido #" + pedido.getId());

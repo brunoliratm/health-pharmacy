@@ -18,7 +18,7 @@ public class LoginFuncionario {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
         EntityManager em = emf.createEntityManager();
 
-        System.out.println("Login do Funcionário\n");
+        System.out.println("Login do Funcionario\n");
         Thread.sleep(1000);
 
         System.out.print("CPF: ");

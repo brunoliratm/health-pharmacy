@@ -14,7 +14,7 @@ public class RemoverProduto {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
         EntityManager em = emf.createEntityManager();
 
-        System.out.println("Remoção de produto\n");
+        System.out.println("Remoçao de produto\n");
         System.out.print("Digite o ID do produto que deseja remover: \n");
         System.out.print("--> ");
         String id = sc.nextLine();
@@ -28,7 +28,7 @@ public class RemoverProduto {
                 em.getTransaction().commit();
                 System.out.println("Produto removido com sucesso!");
             } else {
-                System.out.println("Produto não encontrado.");
+                System.out.println("Produto nao encontrado.");
             }
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {

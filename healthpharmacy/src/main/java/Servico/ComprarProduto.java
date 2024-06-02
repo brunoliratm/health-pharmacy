@@ -51,13 +51,13 @@ public class ComprarProduto {
 
                     System.out.println("Compra realizada com sucesso!");
                 } else {
-                    System.out.println("Quantidade inválida ou insuficiente no estoque.");
+                    System.out.println("Quantidade invalida ou insuficiente no estoque.");
                 }
             } else {
-                System.out.println("Produto não encontrado.");
+                System.out.println("Produto nao encontrado.");
             }
         } catch (NumberFormatException e) {
-            System.out.println("ID do produto ou quantidade inválidos.");
+            System.out.println("ID do produto ou quantidade invalidos.");
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();

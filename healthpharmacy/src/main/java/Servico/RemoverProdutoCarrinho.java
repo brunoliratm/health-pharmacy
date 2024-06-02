@@ -27,10 +27,10 @@ public class RemoverProdutoCarrinho {
 
                 System.out.println("Produto removido do carrinho com sucesso!");
             } else {
-                System.out.println("Produto não encontrado no carrinho.");
+                System.out.println("Produto nao encontrado no carrinho.");
             }
         } catch (NumberFormatException e) {
-            System.out.println("ID do produto inválido.");
+            System.out.println("ID do produto invalido.");
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();

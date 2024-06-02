@@ -8,7 +8,7 @@ public class VizualizarCarrinho {
   public static void visualizarCarrinho(Carrinho carrinho) {
     Scanner sc = new Scanner(System.in);
     if (carrinho.getProdutos().isEmpty()) {
-      System.out.println("Seu carrinho está vazio.");
+      System.out.println("Seu carrinho esta vazio.");
     } else {
       System.out.println("\nItens no seu carrinho:");
       double valorTotal = 0.0;
