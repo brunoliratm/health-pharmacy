@@ -47,7 +47,8 @@ public class MenuEntrada {
                 System.exit(0);
             default:
                 tratamento.opcaoInvalida();
-                menu();
+
+            menu();
         }
     }
 

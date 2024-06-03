@@ -21,7 +21,7 @@ public class MenuCliente {
   public static void menuCliente(Cliente cliente1) throws InterruptedException {
     Scanner sc = new Scanner(System.in);
     Limpeza.limpeza();
-    System.out.println("Menu do Cliente\n\n");
+    System.out.println("===HEALTH PHARMACY===\n");
     Thread.sleep(1500);
     System.out.println("Bem vindo ao menu do Cliente, " + cliente1.getNome() +"!");
 
@@ -42,7 +42,7 @@ public class MenuCliente {
       ).setMaxResults(3);
       List<Produto> melhoresPrecos = queryMelhoresPrecos.getResultList();
 
-      System.out.println("\n3 Produtos com os melhores preços:");
+      System.out.println("\nProdutos com os melhores preços:");
       for (Produto produto : melhoresPrecos) {
         System.out.println(produto.getNome() + " - R$ " + String.format("%.2f", produto.getPreco()));
       }
@@ -53,8 +53,8 @@ public class MenuCliente {
       emf.close();
     }
 
-
-    System.out.println("[1] Comprar produto");
+  System.out.println("\nDigite a opcao desejada:");
+    System.out.println("[1] Comprar produtos");
     System.out.println("[2] Vizualizar produtos disponiveis");
     System.out.println("[3] Historico de Compras");
     System.out.println("[4] Informacoes do cliente");
