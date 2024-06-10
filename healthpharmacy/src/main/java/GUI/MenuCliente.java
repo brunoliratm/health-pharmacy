@@ -31,7 +31,7 @@ public class MenuCliente {
     try {
       // Recomendações do dia
       List<Produto> recomendacoes = em.createQuery("SELECT p FROM Produto p ORDER BY RAND()", Produto.class).setMaxResults(3).getResultList();
-      System.out.println("\nRecomendações do dia: (Com base no seu histórico)");
+      System.out.println("\nRecomendacoes do dia: (Com base no seu historico)");
       for (Produto produto : recomendacoes) {
         System.out.println(produto.getNome() + " - R$ " + String.format("%.2f", produto.getPreco()));
       }
@@ -42,7 +42,7 @@ public class MenuCliente {
       ).setMaxResults(3);
       List<Produto> melhoresPrecos = queryMelhoresPrecos.getResultList();
 
-      System.out.println("\nProdutos com os melhores preços:");
+      System.out.println("\nProdutos com os melhores precos:");
       for (Produto produto : melhoresPrecos) {
         System.out.println(produto.getNome() + " - R$ " + String.format("%.2f", produto.getPreco()));
       }
