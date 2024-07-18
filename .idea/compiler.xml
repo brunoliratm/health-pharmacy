@@ -10,9 +10,12 @@
       </profile>
     </annotationProcessing>
   </component>
+<<<<<<< HEAD
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="healthPharmacy" options="-parameters" />
     </option>
   </component>
+=======
+>>>>>>> fda080ae64e8a0c971b079aa743f626f2ea326e1
 </project>
