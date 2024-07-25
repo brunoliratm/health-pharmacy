@@ -10,8 +10,11 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.Persistence;
+<<<<<<< HEAD
 
 import java.util.Optional;
+=======
+>>>>>>> 7c3994fedcd1aef1fa8a6d42bce6c10b3ff13ed9
 import java.util.Scanner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -106,8 +109,11 @@ public class ClienteService {
     public List<Cliente> listarTodosClientes() {
         return clienteRepository.findAll();
     }
+<<<<<<< HEAD
 
     public Optional<Cliente> findByCpf(String cpf) {
         return clienteRepository.findById(Long.valueOf(cpf));
     }
+=======
+>>>>>>> 7c3994fedcd1aef1fa8a6d42bce6c10b3ff13ed9
 }

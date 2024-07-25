@@ -14,6 +14,10 @@ public class Cliente extends Pessoa implements Serializable{
     private static final long serialVersionUID = 1L;
     @Id
     @Column(length = 11,unique = true)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7c3994fedcd1aef1fa8a6d42bce6c10b3ff13ed9
 	private String CPF;
     @Column(length = 3)
     private int idade;

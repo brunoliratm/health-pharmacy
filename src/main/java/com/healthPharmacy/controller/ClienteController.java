@@ -11,7 +11,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Optional;
+=======
+>>>>>>> 7c3994fedcd1aef1fa8a6d42bce6c10b3ff13ed9
 
 @RestController
 @RequestMapping("/clientes")
@@ -25,6 +28,7 @@ public class ClienteController {
         return clienteService.listarTodosClientes();
     }
     @PostMapping("/cadastrarCliente")
+<<<<<<< HEAD
     public ResponseEntity<Cliente> cadastrarCliente(@RequestBody @Valid ClienteDTO clienteDto) {
         var clienteNovo = new Cliente();
         BeanUtils.copyProperties(clienteDto, clienteNovo);
@@ -41,4 +45,11 @@ public class ClienteController {
         return ResponseEntity.status(HttpStatus.OK).body(clienteService.cadastrarCliente(clienteModel));
     }
 
+=======
+    public ResponseEntity<Cliente> cadastrarCliente(@RequestBody @Valid ClienteDTO cliente) {
+        var clienteNovo = new Cliente();
+        BeanUtils.copyProperties(cliente, clienteNovo);
+        return ResponseEntity.status(HttpStatus.CREATED).body(clienteService.cadastrarCliente(clienteNovo));
+    }
+>>>>>>> 7c3994fedcd1aef1fa8a6d42bce6c10b3ff13ed9
 }
