@@ -1,25 +1,20 @@
 package com.healthPharmacy.service;
 
-import com.healthPharmacy.model.Cliente;
-import com.healthPharmacy.Tratamento.tratamento;
 import com.healthPharmacy.GUI.MenuCliente;
 import com.healthPharmacy.GUI.MenuEntrada;
-
+import com.healthPharmacy.Tratamento.tratamento;
+import com.healthPharmacy.model.Cliente;
 import com.healthPharmacy.repository.ClienteRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.Persistence;
-<<<<<<< HEAD
-
-import java.util.Optional;
-=======
->>>>>>> 7c3994fedcd1aef1fa8a6d42bce6c10b3ff13ed9
-import java.util.Scanner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.Scanner;
 
 @Service
 public class ClienteService {
@@ -63,20 +58,20 @@ public class ClienteService {
         System.out.print("Endereco: ");
         String endereco = sc.nextLine();
         int idade = 0;
-            System.out.print("Idade: ");
-            try {
-                idade = Integer.parseInt(sc.nextLine().replaceAll("[^0-9]", ""));
-                if (idade < 18) {
-                    throw new IllegalArgumentException("Voce deve ter mais de 18 anos para se cadastrar.");
-                }
-            } catch (NumberFormatException e) {
-                tratamento.valorInvalido();
-                MenuEntrada.menuRegistro();
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-                Thread.sleep(2000);
-                MenuEntrada.menuRegistro();
+        System.out.print("Idade: ");
+        try {
+            idade = Integer.parseInt(sc.nextLine().replaceAll("[^0-9]", ""));
+            if (idade < 18) {
+                throw new IllegalArgumentException("Voce deve ter mais de 18 anos para se cadastrar.");
             }
+        } catch (NumberFormatException e) {
+            tratamento.valorInvalido();
+            MenuEntrada.menuRegistro();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            Thread.sleep(2000);
+            MenuEntrada.menuRegistro();
+        }
 
         String telefone;
         while (true) {
@@ -109,11 +104,10 @@ public class ClienteService {
     public List<Cliente> listarTodosClientes() {
         return clienteRepository.findAll();
     }
-<<<<<<< HEAD
+
 
     public Optional<Cliente> findByCpf(String cpf) {
         return clienteRepository.findById(Long.valueOf(cpf));
     }
-=======
->>>>>>> 7c3994fedcd1aef1fa8a6d42bce6c10b3ff13ed9
+
 }
