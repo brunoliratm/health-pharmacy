@@ -1,5 +1,5 @@
  <div align="center">
-    <img src="images/logo.png" width="300" height="300">
+    <img src="src/main/resources/images/logo.png" width="300" height="300">
    <h1 align="center"> 
   
   `Health-Pharmacy`
@@ -45,18 +45,18 @@ mvn compile exec:java
 <details>
   <summary>Entity Structure</summary>
   
-  ![Project1](images/estrutura.png)
+  ![Project1](src/main/resources/images/estrutura.png)
 </details>
 <details>
   <summary>APP Diagram</summary>
   
-  ![Project2](images/diagrama.png)
+  ![Project2](src/main/resources/images/diagrama.png)
 </details>
 <details>
   <summary>Class Diagram</summary>
 
 
-  ![Project3](images/diagramaDeClasse.png)
+  ![Project3](src/main/resources/images/diagramaDeClasse.png)
 </details>
 </br>
 
