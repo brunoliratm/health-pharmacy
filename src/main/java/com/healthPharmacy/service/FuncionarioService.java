@@ -1,8 +1,11 @@
 package com.healthPharmacy.service;
 
 import com.healthPharmacy.Tratamento.tratamento;
+import com.healthPharmacy.model.Cliente;
 import com.healthPharmacy.model.Funcionario;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 import com.healthPharmacy.repository.FuncionarioRepository;
@@ -14,16 +17,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AdicionarFuncionario {
+public class FuncionarioService {
 
 
     @Autowired
     private FuncionarioRepository funcionarioRepository;
 
-    public Funcionario adicionarFuncionario(String nome,String email,String telefone,String cargo, String senha, String CPF) {
-        Funcionario funcionario = new Funcionario(nome, email, telefone,cargo,senha, CPF);
+    public Funcionario cadastrarFuncionario(Funcionario funcionario) {
         return funcionarioRepository.save(funcionario);
     }
+
+    public List<Funcionario> listarTodosFuncionarios(){
+        return funcionarioRepository.findAll();
+    }
+
+    public Optional<Funcionario> findByCpf(String cpf) {
+        return funcionarioRepository.findById(Long.valueOf(cpf));
+    }
+
 
 
     public static void adicionarFuncionario() throws InterruptedException {

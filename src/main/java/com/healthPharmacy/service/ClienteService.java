@@ -26,6 +26,16 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
+    public List<Cliente> listarTodosClientes() {
+        return clienteRepository.findAll();
+    }
+
+    public Optional<Cliente> findByCpf(String cpf) {
+        return clienteRepository.findById(Long.valueOf(cpf));
+    }
+
+
+
     public static void cadastroCliente() throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
@@ -101,13 +111,5 @@ public class ClienteService {
     }
 
 
-    public List<Cliente> listarTodosClientes() {
-        return clienteRepository.findAll();
-    }
-
-
-    public Optional<Cliente> findByCpf(String cpf) {
-        return clienteRepository.findById(Long.valueOf(cpf));
-    }
 
 }

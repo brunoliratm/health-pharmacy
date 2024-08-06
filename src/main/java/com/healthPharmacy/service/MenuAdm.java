@@ -28,7 +28,7 @@ public class MenuAdm {
         Limpeza.limpeza();
         switch(opcao){
             case "1":
-                AdicionarFuncionario.adicionarFuncionario();
+                FuncionarioService.adicionarFuncionario();
                 break;
             case "2":
                 RemoverFuncionario.removerFuncionario();

@@ -27,8 +27,6 @@ public class ClienteController {
     }
 
     @PostMapping("/cadastrarCliente")
-
-
     public ResponseEntity<Cliente> cadastrarCliente(@RequestBody @Valid ClienteDTO clienteDto) {
         var clienteNovo = new Cliente();
         BeanUtils.copyProperties(clienteDto, clienteNovo);
