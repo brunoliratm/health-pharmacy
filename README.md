@@ -116,10 +116,9 @@ mvn exec:java
 
 ```plaintext
 ├── src
-│   ├── main
-│   │   ├── java       # Application source code
-│   │   └── resources  # Config files (persistence.xml, logback.xml)
-│   └── test           # Unit and integration tests
+│   └── main
+│       ├── java       # Application source code
+│       └── resources  # Config files (persistence.xml, logback.xml)
 ├── images             # Logo and diagrams
 ├── pom.xml            # Maven configuration
 └── README.md          # Project documentation
