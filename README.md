@@ -1,99 +1,145 @@
- <div align="center">
-    <img src="images/logo.png" width="300" height="300">
-   <h1 align="center"> 
-  
-  `Health-Pharmacy`
+<div align="center">
+  <img src="images/logo.png" width="300" height="300">
+   <h1 align="center">
+
+`Health-Pharmacy` </br>
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Java Version](https://img.shields.io/badge/Java-22-brightgreen.svg)](https://www.oracle.com/br/java/technologies/downloads/)
 
 </h1>
 </div>
 
-</br>
+## Table of Contents
 
-## 	:page_with_curl:Description
+- [About](#about)
+- [Features](#features)
+- [Diagrams](#diagram)
+- [Technology Stack](#technology-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Database Setup](#database-setup)
+- [Running the Application](#running-the-application)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [License](#license)
 
-Welcome to the Health-pharmacy project! This project aims to provide a comprehensive solution for managing health-related information and pharmacy services. Whether you are a healthcare professional or a pharmacy owner, this project has something for you.
+## About
 
-</br>
+Health-Pharmacy is a Java-based application designed to streamline pharmacy operations and healthcare management. It provides user management, inventory control, online ordering, and analytics tools to improve efficiency and patient care.
 
-## :fireworks:Features
+## Features
 
-- :speaking_head:**User Management**: Easily create and manage user accounts for healthcare professionals, patients, and pharmacy owner.
-- :package:**Pharmacy Inventory**: Manage pharmacy inventory, including stock levels and general information.
-- :desktop_computer:**Online Ordering**: Allow patients to order medications and healthcare products online for home delivery or pickup.
-- :loudspeaker:**Analytics and Reporting**: Generate reports and gain insights into patient health trends, pharmacy sales, and more.
+- **User Management**: Role-based access for administrators, pharmacists, and patients.
+- **Inventory Control**: Track stock levels, add new products, and receive low-stock alerts.
+- **Online Ordering**: Secure patient orders with delivery or pickup options.
+- **Reporting & Analytics**: Generate sales, inventory, and health metrics reports.
+- **Logging & Monitoring**: Integrated with Logback for application logging.
 
-</br>
-
-## :fire:Code 
-<p><a href="health-pharmacy/src">(Click here to view the code)</a></p>
-
-</br>
-
-## :open_file_folder:Installation
-
-```shell
-git clone https://github.com/brunoliratm/health-pharmacy.git
-cd .\health-pharmacy\healthpharmacy\
-mvn compile exec:java
-
-```
-
-</br>
-
-
-## :world_map:Diagram
+## Diagram
 <details>
   <summary>Entity Structure</summary>
-  
+
   ![Project1](images/estrutura.png)
 </details>
 <details>
   <summary>APP Diagram</summary>
-  
+
   ![Project2](images/diagrama.png)
 </details>
 <details>
   <summary>Class Diagram</summary>
 
-
   ![Project3](images/diagramaDeClasse.png)
 </details>
-</br>
 
-## :nerd_face: Project Update
 
-:white_check_mark: Completed
-- [x] Project initialization
-- [x] Migration to Maven build system
-- [x] Established database connection
+## Technology Stack
 
-:hourglass_flowing_sand: In Progress
-- [ ] Implementation of all Java classes
-- [ ] Development of data processing logic
-- [ ] Carry out treatments
-- [ ] Updating UML diagrams
-      
-:spiral_notepad: To Do
-- [ ] Creation of web interface
-      
-:floppy_disk:***Last Updated: May 27, 2024***
+- Java 22
+- Maven
+- JPA / Hibernate
+- MySQL 8
+- Logback
 
-</br>
+## Prerequisites
 
-## :zombie:Credits
+- Java Development Kit (JDK) 22 or later
+- Apache Maven 3.6+
+- MySQL Server 8.0+
+- Git
 
-| <a href="https://github.com/brunoliratm"><img src="https://avatars.githubusercontent.com/u/114788642?v=4" float="left" width="40px" height=40px><p>BrunoMagno</p></a> | <a href="https://github.com/P4UL0Jr"><img src="https://avatars.githubusercontent.com/u/127964717?v=4" float="left" width="40px" height="40px"><p>P4ULOjr</p></a> |
-| --- | --- |
+## Installation
 
-</br>
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/brunoliratm/health-pharmacy.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd health-pharmacy
+   ```
+3. Build the project with Maven:
+   ```sh
+   mvn clean install
+   ```
 
-## :handshake:Contributing
+## Configuration
 
-Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
+1. Open `src/main/resources/META-INF/persistence.xml`.
+2. Update the database connection URL, username, and password:
+   ```xml
+   <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/healthpharmacy"/>
+   <property name="javax.persistence.jdbc.user" value="root"/>
+   <property name="javax.persistence.jdbc.password" value="password"/>
+   ```
+3. Adjust logging settings in `src/main/resources/logback.xml` (optional).
 
-</br>
+## Database Setup
 
-## :balance_scale:License
+```sql
+CREATE DATABASE healthpharmacy;
+USE healthpharmacy;
+-- The application will create all necessary tables on first run.
+```
 
-This project is licensed under the [MIT License](LICENSE).
+## Running the Application
 
+Start the application using Maven:
+
+```sh
+mvn exec:java
+```
+
+## Project Structure
+
+```plaintext
+├── src
+│   ├── main
+│   │   ├── java       # Application source code
+│   │   └── resources  # Config files (persistence.xml, logback.xml)
+│   └── test           # Unit and integration tests
+├── images             # Logo and diagrams
+├── pom.xml            # Maven configuration
+└── README.md          # Project documentation
+```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add YourFeature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a Pull Request.
+
+## Authors
+
+- **BrunoMagno** ([brunoliratm](https://github.com/brunoliratm))
+- **P4ULOjr** ([P4UL0Jr](https://github.com/P4UL0Jr))
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
