@@ -1,17 +1,44 @@
-target/
+# --- Build / Maven ---
+/target/
+/dependency-reduced-pom.xml
+/buildNumber.properties
+release.properties
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
 .mvn/timing.properties
-# https://maven.apache.org/wrapper/#usage-without-binary-jar
-.mvn/wrapper/maven-wrapper.jar
 
-# Eclipse m2e generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
+# --- IDEs ---
+/.idea/
+*.iml
+/.project
+/.classpath
+/.settings/
+/.vscode/
+out/
+
+# --- Generated files ---
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Local env / tooling ---
+local.properties
+.env
+
+# --- Editor temp / swap ---
+*~
+*.swp
+*.swo
+
+# --- Misc ---
+.gradle/
+node_modules/
