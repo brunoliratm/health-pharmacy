@@ -1,7 +1,6 @@
 package com.healthpharmacy.domain.entities;
 
 import com.healthpharmacy.domain.constants.PaymentMethod;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

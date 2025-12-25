@@ -12,8 +12,8 @@ public final class Customer extends Person {
     private LocalDate birthDate;
     public Customer() {};
 
-    public Customer(String cpf, String name, String email, String password, LocalDate birthDate, boolean active) {
-        super(cpf, name, email, password, active);
+    public Customer(String cpf, String name, String email, String password, LocalDate birthDate) {
+        super(cpf, name, email, password);
         this.birthDate = birthDate;
     }
 

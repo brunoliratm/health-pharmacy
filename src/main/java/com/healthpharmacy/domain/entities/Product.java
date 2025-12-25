@@ -2,7 +2,6 @@ package com.healthpharmacy.domain.entities;
 
 import com.healthpharmacy.domain.constants.ProductCategory;
 import org.hibernate.annotations.Where;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 
