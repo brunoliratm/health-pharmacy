@@ -10,14 +10,18 @@ public final class Customer extends Person {
 
     @Column(length = 3,nullable = false)
     private LocalDate birthDate;
-    public Customer() {};
+    public Customer() {}
 
     public Customer(String cpf, String name, String email, String password, LocalDate birthDate) {
         super(cpf, name, email, password);
         this.birthDate = birthDate;
     }
 
-    public int getBirthDate() {
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public int getAge() {
         return Period.between(birthDate, LocalDate.now()).getYears();
     }
 
