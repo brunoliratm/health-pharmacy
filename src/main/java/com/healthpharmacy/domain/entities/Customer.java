@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 @Entity
-public final class Customer extends Person {
+public class Customer extends Person {
 
     @Column(length = 3,nullable = false)
     private LocalDate birthDate;
