@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Entity
 @Where(clause = "active= true")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public sealed abstract class Person permits Customer{
+public abstract class Person {
     @Id
     @Column(length = 11, nullable = false, unique = true)
     private String cpf;

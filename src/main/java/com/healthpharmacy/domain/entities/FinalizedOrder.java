@@ -26,10 +26,11 @@ public class FinalizedOrder {
     @Column(nullable = false)
     private BigDecimal totalAmount;
     @Enumerated(EnumType.STRING)
-    @Column(name="payment_method", nullable = false)
+    @Column(name = "payment_method", nullable = false)
     private PaymentMethod paymentMethod;
 
-    public FinalizedOrder() {}
+    public FinalizedOrder() {
+    }
 
     public FinalizedOrder(List<Product> products, Customer customer, BigDecimal totalAmount, PaymentMethod paymentMethod) {
         this.products = products;
@@ -37,6 +38,7 @@ public class FinalizedOrder {
         this.totalAmount = totalAmount;
         this.paymentMethod = paymentMethod;
     }
+
     public LocalDateTime getOrderDate() {
         return orderDate;
     }
@@ -77,11 +79,11 @@ public class FinalizedOrder {
         this.paymentMethod = paymentMethod;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
