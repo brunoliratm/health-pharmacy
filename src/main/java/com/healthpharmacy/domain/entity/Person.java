@@ -1,4 +1,4 @@
-package com.healthpharmacy.domain.entities;
+package com.healthpharmacy.domain.entity;
 
 import org.hibernate.annotations.Where;
 import javax.persistence.*;

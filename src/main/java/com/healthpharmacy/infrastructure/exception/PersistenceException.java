@@ -1,4 +1,4 @@
-package com.healthpharmacy.infrastructure.exceptions;
+package com.healthpharmacy.infrastructure.exception;
 
 public class PersistenceException extends RuntimeException {
     public PersistenceException(String message) {

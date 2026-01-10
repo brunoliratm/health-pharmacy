@@ -1,6 +1,6 @@
-package com.healthpharmacy.domain.entities;
+package com.healthpharmacy.domain.entity;
 
-import com.healthpharmacy.domain.constants.PaymentMethod;
+import com.healthpharmacy.domain.constant.PaymentMethod;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

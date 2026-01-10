@@ -1,4 +1,4 @@
-package com.healthpharmacy.domain.entities;
+package com.healthpharmacy.domain.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
