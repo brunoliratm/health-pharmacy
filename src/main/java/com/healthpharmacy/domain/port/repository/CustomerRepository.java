@@ -7,7 +7,7 @@ import java.util.Optional;
 public interface CustomerRepository {
     void add(Customer customer);
     Optional<Customer> findByCpf(String cpf);
-    void update(String cpf, Customer customer); //parcial
+    void update(String cpf, Customer customer);
     void delete(String cpf);
     List<Customer> findAll();
 }
