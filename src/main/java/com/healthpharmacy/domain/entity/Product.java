@@ -1,6 +1,6 @@
-package com.healthpharmacy.domain.entities;
+package com.healthpharmacy.domain.entity;
 
-import com.healthpharmacy.domain.constants.ProductCategory;
+import com.healthpharmacy.domain.constant.ProductCategory;
 import org.hibernate.annotations.Where;
 import javax.persistence.*;
 import java.math.BigDecimal;

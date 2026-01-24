@@ -1,8 +1,8 @@
-package com.healthpharmacy.infrastructure.repositories;
+package com.healthpharmacy.infrastructure.repository;
 
-import com.healthpharmacy.domain.entities.Product;
-import com.healthpharmacy.domain.ports.repositories.ProductRepository;
-import com.healthpharmacy.infrastructure.exceptions.PersistenceException;
+import com.healthpharmacy.domain.entity.Product;
+import com.healthpharmacy.domain.port.repository.ProductRepository;
+import com.healthpharmacy.infrastructure.exception.PersistenceException;
 import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;

@@ -1,4 +1,4 @@
-package com.healthpharmacy.domain.constants;
+package com.healthpharmacy.domain.constant;
 
 public enum ProductCategory {
     MEDICATIONS,

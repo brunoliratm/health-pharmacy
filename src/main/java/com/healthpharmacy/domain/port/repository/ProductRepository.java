@@ -1,6 +1,6 @@
-package com.healthpharmacy.domain.ports.repositories;
+package com.healthpharmacy.domain.port.repository;
 
-import com.healthpharmacy.domain.entities.Product;
+import com.healthpharmacy.domain.entity.Product;
 import java.util.List;
 import java.util.Optional;
 
