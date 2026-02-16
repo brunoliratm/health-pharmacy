@@ -1,5 +1,12 @@
 # Health Pharmacy
 
+[![Java](https://img.shields.io/badge/Java-21-orange?logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
+[![Maven](https://img.shields.io/badge/Maven-Build-C71A36?logo=apachemaven&logoColor=white)](https://maven.apache.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/brunoliratm/health-pharmacy)](https://github.com/brunoliratm/health-pharmacy/commits/main)
+
+
 A clean, layered Java console application for pharmacy operations: customer management, product catalog, and checkout/order finalization.
 
 ## Why this project
@@ -25,6 +32,19 @@ See [pom.xml](pom.xml) for dependencies and plugin configuration.
 ## Architecture
 
 The project follows a layered architecture inspired by Ports & Adapters:
+
+```mermaid
+flowchart TB
+    P[Presentation Layer\nUI Menus & Console Input]
+    A[Application Layer\nUse Cases, Services & DTOs]
+    D[Domain Layer\nEntities, Enums & Ports]
+    I[Infrastructure Layer\nRepository Implementations & Persistence]
+
+    P --> A
+    A --> D
+    I --> D
+    A -. uses .-> I
+```
 
 - **Domain**
   - Entities and business contracts
@@ -147,8 +167,12 @@ src/main/java/com/healthpharmacy
 │   ├── exception
 │   └── repository
 └── presentation
-	└── ui
+ └── ui
 ```
+
+## Author
+
+- Bruno Lira — [@brunoliratm](https://github.com/brunoliratm)
 
 ## License
 
