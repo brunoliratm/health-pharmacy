@@ -71,6 +71,13 @@ public class CustomerService implements CustomerUseCase {
     return customerRepository.findAll().stream().map(this::mapToResponse).toList();
   }
 
+  @Override
+  public boolean validatePassword(String cpf, String password) {
+    return customerRepository.findByCpf(cpf)
+        .map(customer -> customer.getPassword().equals(password))
+        .orElse(false);
+  }
+
   private boolean isCpfValid(String cpf) {
     return cpf != null && cpf.length() == 11 && cpf.matches("\\d+");
   }

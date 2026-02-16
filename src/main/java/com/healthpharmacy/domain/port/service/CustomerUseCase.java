@@ -16,4 +16,6 @@ public interface CustomerUseCase {
   Optional<CustomerResponseDTO> findByCpf(String cpf);
 
   List<CustomerResponseDTO> listAll();
+
+  boolean validatePassword(String cpf, String password);
 }

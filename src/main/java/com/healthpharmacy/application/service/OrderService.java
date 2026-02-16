@@ -11,6 +11,8 @@ import com.healthpharmacy.domain.port.repository.OrderRepository;
 import com.healthpharmacy.domain.port.service.CustomerUseCase;
 import com.healthpharmacy.domain.port.service.OrderUseCase;
 import com.healthpharmacy.domain.port.service.ProductUseCase;
+import com.healthpharmacy.infrastructure.exception.ValidationException;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +36,9 @@ public class OrderService implements OrderUseCase {
   public void checkout(CheckoutRequestDTO request) {
     CustomerResponseDTO customerResponseDTO = customerService.findByCpf(request.customerCpf())
         .orElseThrow(() -> new EntityNotFoundException("Customer not found with CPF: " + request.customerCpf()));
+
+    if (!customerService.validatePassword(request.customerCpf(), request.password()))
+      throw new ValidationException("Authentication failed: Invalid password.");
 
     List<Product> products = new ArrayList<>();
     BigDecimal total = BigDecimal.ZERO;
