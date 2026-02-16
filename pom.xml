@@ -59,7 +59,7 @@
           <artifactId>exec-maven-plugin</artifactId>
           <version>3.3.0</version>
           <configuration>
-            <mainClass>GUI.MenuEntrada</mainClass>
+            <mainClass>com.healthpharmacy.Main</mainClass>
           </configuration>
         </plugin>
 
