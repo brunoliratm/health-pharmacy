@@ -35,15 +35,43 @@ The project follows a layered architecture inspired by Ports & Adapters:
 
 ```mermaid
 flowchart TB
-    P[Presentation Layer\nUI Menus & Console Input]
-    A[Application Layer\nUse Cases, Services & DTOs]
-    D[Domain Layer\nEntities, Enums & Ports]
-    I[Infrastructure Layer\nRepository Implementations & Persistence]
+    subgraph Presentation ["Presentation Layer"]
+        direction TB
+        UI[UI Menus & Console Input]
+    end
 
-    P --> A
-    A --> D
-    I --> D
-    A -. uses .-> I
+    subgraph Application ["Application Layer"]
+        direction TB
+        SVC[Services / Use Cases]
+        DTO[DTOs]
+    end
+
+    subgraph Domain ["Domain Layer (Core)"]
+        direction TB
+        ENT[Entities]
+        PORTS[Ports / Interfaces]
+        ENUM[Enums]
+    end
+
+    subgraph Infrastructure ["Infrastructure Layer"]
+        direction TB
+        REPO[Repository Impls]
+        DB[(PostgreSQL)]
+    end
+
+    %% Dependencies
+    UI --> SVC
+    SVC --> DTO
+    SVC --> PORTS
+    REPO -- implements --> PORTS
+    REPO --> DB
+    SVC --> ENT
+    ENT --- ENUM
+
+    class Presentation,UI presentation;
+    class Application,SVC,DTO application;
+    class Domain,ENT,PORTS,ENUM domain;
+    class Infrastructure,REPO,DB infrastructure;
 ```
 
 - **Domain**
