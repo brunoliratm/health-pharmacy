@@ -4,7 +4,6 @@
 [![Maven](https://img.shields.io/badge/Maven-Build-C71A36?logo=apachemaven&logoColor=white)](https://maven.apache.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/brunoliratm/health-pharmacy)](https://github.com/brunoliratm/health-pharmacy/commits/main)
 
 
 A clean, layered Java console application for pharmacy operations: customer management, product catalog, and checkout/order finalization.
